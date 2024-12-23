@@ -51,6 +51,7 @@ jobs:
 
       - name: Prepare Database
         run: |
+          touch database/testing.sqlite
           php artisan migrate --env=testing --force
           php artisan db:seed --env=testing --force
 
