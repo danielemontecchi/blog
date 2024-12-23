@@ -1,6 +1,9 @@
 <?php
 
 use App\Models\Post;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+uses(RefreshDatabase::class);
 
 it('can display the blog index', function () {
 	$this->get(route('blog.index'))
@@ -9,7 +12,7 @@ it('can display the blog index', function () {
 
 it('can display a blog post', function () {
 	$post = Post::factory()->create([
-		'slug' => 'test-post',
+		'title' => 'Post for testing',
 		'published_at' => now(),
 	]);
 
