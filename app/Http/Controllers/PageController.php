@@ -1,17 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
+
+use Illuminate\View\View;
 
 class PageController extends Controller
 {
-	public function home()
+	public function home(): View
 	{
 		return view('pages.home');
 	}
 
-	public function about()
+	public function about(): View
 	{
 		return view('pages.about');
 	}
-
 }

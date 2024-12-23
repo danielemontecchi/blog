@@ -1,12 +1,12 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\View\View;
 
 class BlogController extends Controller
 {
-	public function index()
+	public function index(): View
 	{
 		$posts = Post::whereNotNull('published_at')
 			->orderByDesc('published_at')
@@ -15,12 +15,11 @@ class BlogController extends Controller
 		return view('blog.index', compact('posts'));
 	}
 
-	public function show($slug)
+	public function show(string $slug): View
 	{
 		$post = Post::where('slug', $slug)
 			->firstOrFail();
-		
+
 		return view('blog.show', compact('post'));
 	}
-
 }
