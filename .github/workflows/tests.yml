@@ -1,5 +1,12 @@
 name: Run Tests
-on: [ push, pull_request ]
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   laravel-tests:
@@ -7,9 +14,36 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Set up PHP
+
+      - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-      - run: composer install
-      - run: php artisan test
+          extensions: mbstring, bcmath, intl
+          coverage: none
+
+      - name: Install Composer Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest --ansi
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Node.js Dependencies
+        run: npm install
+
+      - name: Build Assets
+        run: npm run build
+
+      - name: Copy .env.testing
+        run: cp .env.testing .env
+
+      - name: Generate Application Key
+        run: php artisan key:generate
+
+      - name: Run Migrations
+        run: php artisan migrate --env=testing --force
+
+      - name: Run Tests
+        run: php artisan test
