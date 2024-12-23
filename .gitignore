@@ -15,6 +15,7 @@ auth.json
 /.nova
 /.vscode
 /.zed
+.php-cs-fixer.cache
 
 
 ### Laravel ###
