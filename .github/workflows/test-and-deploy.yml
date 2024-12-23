@@ -49,6 +49,17 @@ jobs:
       - name: Install Dependencies
         run: composer install --no-progress --no-suggest --prefer-dist
 
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Install Node Dependencies
+        run: npm install
+
+      - name: Build Frontend Assets
+        run: npm run build
+
       - name: Prepare Database
         run: |
           touch database/testing.sqlite
