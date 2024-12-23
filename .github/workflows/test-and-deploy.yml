@@ -13,7 +13,7 @@ on:
 jobs:
   code_analysis:
     name: Code analysis with PHPStan
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Code
@@ -33,7 +33,7 @@ jobs:
 
   testing:
     name: Run Tests with Pest
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: code_analysis
 
     steps:
@@ -60,7 +60,7 @@ jobs:
 
   deploy:
     name: Deploy on server
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     needs: [ code_analysis, testing ]
 
     steps:
