@@ -11,11 +11,13 @@ class UserSeeder extends Seeder
 	 */
 	public function run(): void
 	{
+		User::truncate();
+
 		// Creare un utente specifico
 		User::factory()->create([
 			'name'     => 'Admin User',
-			'email'    => 'admin@user.com',
-			'password' => bcrypt('password'),
+			'email'    => 'daniele@montecchi.me',
+			'password' => bcrypt('admin1234'),
 		]);
 
 		// Creare 3 utenti casuali

@@ -5,7 +5,7 @@
       <list>
         <IssueNavigationLink>
           <option name="issueRegexp" value="\(#(\d+)\)" />
-          <option name="linkRegexp" value="https://github.com/EvolvifyApp/site/issues/$1" />
+          <option name="linkRegexp" value="https://github.com/danielemontecchi/site/issues/$1" />
         </IssueNavigationLink>
       </list>
     </option>

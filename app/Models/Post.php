@@ -15,6 +15,13 @@ class Post extends Model
 
 	protected $guarded = [];
 
+	protected function casts(): array
+	{
+		return [
+			'published_at' => 'datetime',
+		];
+	}
+
 	public function getSlugOptions(): SlugOptions
 	{
 		return SlugOptions::create()
