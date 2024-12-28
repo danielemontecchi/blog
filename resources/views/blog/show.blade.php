@@ -6,7 +6,9 @@
                     <div class="lg:max-w-lg">
                         <p class="text-base/7 font-semibold text-indigo-600">{{optional($post->published_at)->format('d M Y')}}</p>
                         <h1 class="mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">{{$post->title}}</h1>
-                        <p class="mt-6 text-xl/8 text-gray-700">{{$post->content}}</p>
+                        <p class="mt-6 text-xl/8 text-gray-700">
+                            {!! str($post->content)->markdown()->sanitizeHtml() !!}
+                        </p>
                     </div>
                 </div>
             </div>

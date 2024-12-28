@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Models\Post;
-use Filament\Forms\Components\DatePicker;
-use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\{DatePicker, MarkdownEditor, TextInput};
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -15,8 +12,7 @@ use Filament\Tables\Table;
 
 class PostResource extends Resource
 {
-	protected static ?string $model = Post::class;
-
+	protected static ?string $model          = Post::class;
 	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 	public static function form(Form $form): Form
@@ -25,7 +21,7 @@ class PostResource extends Resource
 			->schema([
 				TextInput::make('title')->required(),
 				TextInput::make('slug')->required(),
-				RichEditor::make('content')->required(),
+				MarkdownEditor::make('content')->required(),
 				DatePicker::make('published_at'),
 			]);
 	}
@@ -61,9 +57,9 @@ class PostResource extends Resource
 	public static function getPages(): array
 	{
 		return [
-			'index' => Pages\ListPosts::route('/'),
+			'index'  => Pages\ListPosts::route('/'),
 			'create' => Pages\CreatePost::route('/create'),
-			'edit' => Pages\EditPost::route('/{record}/edit'),
+			'edit'   => Pages\EditPost::route('/{record}/edit'),
 		];
 	}
 }

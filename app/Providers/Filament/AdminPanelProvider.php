@@ -1,7 +1,10 @@
 <?php
 namespace App\Providers\Filament;
 
-use Filament\Http\Middleware\{Authenticate, AuthenticateSession, DisableBladeIconComponents, DispatchServingFilamentEvent};
+use Filament\Http\Middleware\{Authenticate,
+	AuthenticateSession,
+	DisableBladeIconComponents,
+	DispatchServingFilamentEvent};
 use Filament\Support\Colors\Color;
 use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
@@ -20,7 +23,7 @@ class AdminPanelProvider extends PanelProvider
 			->path('admin')
 			->login()
 			->colors([
-				'primary' => Color::Amber,
+				'primary' => Color::Green,
 			])
 			->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
 			->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
