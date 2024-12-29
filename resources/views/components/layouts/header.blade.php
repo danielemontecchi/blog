@@ -2,10 +2,10 @@
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div class="flex lg:flex-1">
             <a href="{{route('home')}}" class="-m-1.5 p-1.5 inline-flex items-center">
-                <span class="sr-only">danielemontecchi.it</span>
+                <span class="sr-only">{{config('site.name')}}</span>
                 <img class="h-8 w-auto" src="{{ asset('/images/favicon/favicon.svg') }}"
                      alt="">
-                <span class="px-3 font-medium">danielemontecchi.it</span>
+                <span class="px-3 font-medium">{{config('site.name')}}</span>
             </a>
         </div>
         <div class="flex lg:hidden">
