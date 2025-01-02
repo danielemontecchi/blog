@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Filament\Pages;
 
 use App\Settings\GeneralSetting;
@@ -12,11 +13,14 @@ class GeneralSettingsPage extends Page implements Forms\Contracts\HasForms
 
 	protected static ?string $navigationGroup = 'Settings';
 	protected static ?string $navigationLabel = 'General';
-	protected static ?string $navigationIcon  = 'heroicon-o-globe-alt';
-	protected static ?string $slug            = 'settings/general';
-	protected ?string $heading                = 'General settings';
-	protected static string $view             = 'filament.pages.general-settings-page';
-	public array $settings                    = [];
+	protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
+	protected static ?string $slug = 'settings/general';
+	protected ?string $heading = 'General settings';
+	protected static string $view = 'filament.pages.general-settings-page';
+	/**
+	 * @var array<mixed>
+	 */
+	public array $settings = [];
 
 	public function mount(): void
 	{

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Filament\Pages;
 
 use App\Settings\SeoSetting;
@@ -12,11 +13,14 @@ class SeoSettingsPage extends Page implements Forms\Contracts\HasForms
 
 	protected static ?string $navigationGroup = 'Settings';
 	protected static ?string $navigationLabel = 'SEO';
-	protected static ?string $navigationIcon  = 'heroicon-o-presentation-chart-line';
-	protected static ?string $slug            = 'settings/seo';
-	protected ?string $heading                = 'SEO settings';
-	protected static string $view             = 'filament.pages.seo-settings-page';
-	public array $settings                    = [];
+	protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
+	protected static ?string $slug = 'settings/seo';
+	protected ?string $heading = 'SEO settings';
+	protected static string $view = 'filament.pages.seo-settings-page';
+	/**
+	 * @var array<mixed>
+	 */
+	public array $settings = [];
 
 	public function mount(): void
 	{

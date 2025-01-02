@@ -1,4 +1,25 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+# Check .env variables
+scripts/check-env-vars.sh
+if [ $? -ne 0 ]; then
+    echo "❌ Commit aborted due to discrepancies between .env and .env.example."
+    exit 1
+fi
+
+# Run PHPStan
+./vendor/bin/phpstan analyse
+if [ $? -ne 0 ]; then
+    echo "❌ Found errors with PHPStan."
+    exit 1
+fi
+
+# Run PHP CS Fixer
+php-cs-fixer fix --config=php-cs-fixer.dist.php
+if [ $? -ne 0 ]; then
+    echo "❌ Error: PHP CS Fixer found code style issues."
+    exit 1
+fi
+
+echo "✅ All checks passed. Proceeding with commit."
