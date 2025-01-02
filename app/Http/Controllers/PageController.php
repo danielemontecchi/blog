@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\Page;
-use App\Models\Post;
+use App\Models\{Page, Post};
 use Illuminate\View\View;
 
 class PageController extends Controller

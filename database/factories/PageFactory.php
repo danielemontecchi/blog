@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\Page;
@@ -25,9 +24,9 @@ class PageFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'title' => $this->faker->sentence,
-			'slug' => $this->faker->slug,
-			'content' => $this->faker->paragraphs(3, true),
+			'title'       => $this->faker->sentence,
+			'slug'        => $this->faker->slug,
+			'content'     => $this->faker->paragraphs(3, true),
 			'is_markdown' => $this->faker->boolean,
 		];
 	}

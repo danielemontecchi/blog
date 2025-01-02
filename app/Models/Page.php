@@ -1,10 +1,8 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\{HasSlug, SlugOptions};
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<Page>

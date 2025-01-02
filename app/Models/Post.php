@@ -1,11 +1,9 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\{HasSlug, SlugOptions};
 
 /**
  * @method static \Database\Factories\PostFactory factory(...$parameters)

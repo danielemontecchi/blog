@@ -1,22 +1,18 @@
 <?php
-
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\PageResource\Pages;
 use App\Models\Page;
-use Filament\Forms\Components\MarkdownEditor;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\{MarkdownEditor, TextInput, Toggle};
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\IconColumn;
-use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\{IconColumn, TextColumn};
 use Filament\Tables\Table;
 
 class PageResource extends Resource
 {
-	protected static ?string $model = Page::class;
+	protected static ?string $model          = Page::class;
 	protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
 	public static function form(Form $form): Form
@@ -37,11 +33,13 @@ class PageResource extends Resource
 				TextColumn::make('title')->searchable(),
 				TextColumn::make('slug'),
 				IconColumn::make('is_markdown')
-					->icon(fn(bool $state): string => $state
+					->icon(
+						fn (bool $state): string => $state
 						? 'heroicon-o-check-circle'
 						: 'heroicon-o-x-circle'
 					)
-					->color(fn(bool $state): string => $state
+					->color(
+						fn (bool $state): string => $state
 						? 'success'
 						: 'warning'
 					),
@@ -69,9 +67,9 @@ class PageResource extends Resource
 	public static function getPages(): array
 	{
 		return [
-			'index' => Pages\ListPages::route('/'),
+			'index'  => Pages\ListPages::route('/'),
 			'create' => Pages\CreatePage::route('/create'),
-			'edit' => Pages\EditPage::route('/{record}/edit'),
+			'edit'   => Pages\EditPage::route('/{record}/edit'),
 		];
 	}
 }
