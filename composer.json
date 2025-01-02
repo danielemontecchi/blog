@@ -19,7 +19,8 @@
     "opcodesio/log-viewer": "^3.12",
     "predis/predis": "^2.3",
     "spatie/laravel-settings": "^3.4",
-    "spatie/laravel-sluggable": "^3.7"
+    "spatie/laravel-sluggable": "^3.7",
+    "ext-pdo": "*"
   },
   "require-dev": {
     "barryvdh/laravel-debugbar": "^3.14",
