@@ -1,0 +1,4 @@
+<ruleset name="site">
+    <exclude-pattern>composer.json</exclude-pattern>
+    <exclude-pattern>_ide_helper.php</exclude-pattern>
+</ruleset>
