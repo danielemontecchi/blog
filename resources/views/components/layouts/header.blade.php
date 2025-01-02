@@ -21,7 +21,6 @@
         </div>
         <div class="hidden lg:flex lg:gap-x-12">
             <a href="{{route('home')}}" class="text-sm/6 font-semibold text-gray-900">Home</a>
-            <a href="{{route('about')}}" class="text-sm/6 font-semibold text-gray-900">About</a>
             <a href="{{route('blog.index')}}" class="text-sm/6 font-semibold text-gray-900">Blog</a>
         </div>
     </nav>
@@ -49,8 +48,6 @@
                     <div class="space-y-2 py-6">
                         <a href="{{route('home')}}"
                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
-                        <a href="{{route('about')}}"
-                           class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">About</a>
                         <a href="{{route('blog.index')}}"
                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Blog</a>
                     </div>
