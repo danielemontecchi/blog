@@ -1,10 +1,7 @@
 <?php
 namespace App\Providers\Filament;
 
-use Filament\Http\Middleware\{Authenticate,
-	AuthenticateSession,
-	DisableBladeIconComponents,
-	DispatchServingFilamentEvent};
+use Filament\Http\Middleware\{Authenticate, AuthenticateSession, DisableBladeIconComponents, DispatchServingFilamentEvent};
 use Filament\Support\Colors\Color;
 use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};

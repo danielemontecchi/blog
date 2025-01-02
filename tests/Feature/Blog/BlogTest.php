@@ -12,7 +12,7 @@ it('can display the blog index', function () {
 
 it('can display a blog post', function () {
 	$post = Post::factory()->create([
-		'title' => 'Post for testing',
+		'title'        => 'Post for testing',
 		'published_at' => now(),
 	]);
 

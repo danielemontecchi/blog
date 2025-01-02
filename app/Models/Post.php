@@ -7,6 +7,7 @@ use Spatie\Sluggable\{HasSlug, SlugOptions};
 
 /**
  * @method static \Database\Factories\PostFactory factory(...$parameters)
+ *
  * @mixin Builder<Post>
  */
 class Post extends Model
