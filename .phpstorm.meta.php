@@ -11,6 +11,7 @@ namespace PHPSTORM_META {
 	*/
 	override(new \Illuminate\Contracts\Container\Container, map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -198,6 +199,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -257,6 +261,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\Illuminate\Container\Container::makeWith(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -444,6 +449,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -503,6 +511,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\Illuminate\Contracts\Container\Container::get(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -690,6 +699,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -749,6 +761,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\Illuminate\Contracts\Container\Container::make(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -936,6 +949,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -995,6 +1011,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -1182,6 +1199,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -1241,6 +1261,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\App::get(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -1428,6 +1449,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -1487,6 +1511,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\App::make(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -1674,6 +1699,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -1733,6 +1761,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\App::makeWith(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -1920,6 +1949,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -1979,6 +2011,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\app(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -2166,6 +2199,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -2225,6 +2261,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\resolve(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -2412,6 +2449,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,
@@ -2471,6 +2511,7 @@ namespace PHPSTORM_META {
 	]));
 	override(\Psr\Container\ContainerInterface::get(0), map([
 		''                                                                 => '@',
+		'App\Settings\GeneralSetting'                                      => \App\Settings\GeneralSetting::class,
 		'Barryvdh\Debugbar\LaravelDebugbar'                                => \Barryvdh\Debugbar\LaravelDebugbar::class,
 		'Barryvdh\Debugbar\SymfonyHttpDriver'                              => \Barryvdh\Debugbar\SymfonyHttpDriver::class,
 		'BladeUI\Icons\Factory'                                            => \BladeUI\Icons\Factory::class,
@@ -2658,6 +2699,9 @@ namespace PHPSTORM_META {
 		'Spatie\LaravelRay\Watchers\SlowQueryWatcher'                      => \Spatie\LaravelRay\Watchers\SlowQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\UpdateQueryWatcher'                    => \Spatie\LaravelRay\Watchers\UpdateQueryWatcher::class,
 		'Spatie\LaravelRay\Watchers\ViewWatcher'                           => \Spatie\LaravelRay\Watchers\ViewWatcher::class,
+		'Spatie\LaravelSettings\SettingsMapper'                            => \Spatie\LaravelSettings\SettingsMapper::class,
+		'Spatie\LaravelSettings\SettingsRepositories\SettingsRepository'   => \Spatie\LaravelSettings\SettingsRepositories\DatabaseSettingsRepository::class,
+		'Spatie\LaravelSettings\Support\SettingsCacheFactory'              => \Spatie\LaravelSettings\Support\SettingsCacheFactory::class,
 		'Spatie\Ray\Client'                                                => \Spatie\Ray\Client::class,
 		'Spatie\Ray\Settings\Settings'                                     => \Spatie\Ray\Settings\Settings::class,
 		'Symfony\Component\HtmlSanitizer\HtmlSanitizerInterface'           => \Symfony\Component\HtmlSanitizer\HtmlSanitizer::class,

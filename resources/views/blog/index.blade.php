@@ -32,5 +32,5 @@
                 @endforeach
             </div>
         </div>
-
+    </div>
 </x-layouts.app>
