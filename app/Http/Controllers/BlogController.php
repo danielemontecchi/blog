@@ -19,6 +19,7 @@ class BlogController extends Controller
 	{
 		$post = Post::where('slug', $slug)
 			->firstOrFail();
+		$post->increment('views');
 
 		return view('blog.show', compact('post'));
 	}

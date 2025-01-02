@@ -10,7 +10,7 @@ class PageController extends Controller
 	{
 		$posts = Post::whereNotNull('published_at')
 			->orderByDesc('published_at')
-			->take(6)
+			->take(9)
 			->get();
 
 		return view('pages.home', compact('posts'));

@@ -76,7 +76,7 @@ Follow these steps to set up the project locally:
 
 - Access the admin panel for managing settings and posts at `/admin`.
 - Default credentials (if seeding is enabled):
-    - **Email**: `daniele@montecchi.me`
+    - **Email**: `admin@user.me`
     - **Password**: `admin1234`
 
 ### Multilingual Configuration
@@ -89,11 +89,10 @@ Follow these steps to set up the project locally:
 ## Roadmap
 
 - [x] Dynamic blog post creation and management
-- [x] Multilingual support
-- [x] Google Analytics integration
-- [ ] Newsletter subscription feature
-- [ ] Advanced search functionality
 - [ ] Content scheduling
+- [ ] Google Analytics integration
+- [ ] Newsletter subscription feature
+- [ ] Multilingual support
 
 ---
 

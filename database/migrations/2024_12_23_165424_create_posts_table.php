@@ -15,6 +15,7 @@ return new class extends Migration {
 			$table->string('title');
 			$table->string('slug')->unique();
 			$table->text('content');
+			$table->unsignedInteger('views')->default(0);
 			$table->timestamp('published_at')->nullable();
 			$table->timestamps();
 		});

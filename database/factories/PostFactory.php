@@ -15,7 +15,7 @@ class PostFactory extends Factory
 	 * @var class-string<Post>
 	 */
 	protected $model = Post::class;
-	
+
 	/**
 	 * Define the model's default state.
 	 *
@@ -27,7 +27,8 @@ class PostFactory extends Factory
 			'title'        => $this->faker->sentence,
 			'slug'         => $this->faker->slug,
 			'content'      => $this->faker->paragraphs(3, true),
-			'published_at' => $this->faker->optional()->dateTime,
+			'views'        => $this->faker->numberBetween(0, 1000),
+			'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
 		];
 	}
 }
