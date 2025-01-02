@@ -15,9 +15,4 @@ class PageController extends Controller
 
 		return view('pages.home', compact('posts'));
 	}
-
-	public function about(): View
-	{
-		return view('pages.about');
-	}
 }
