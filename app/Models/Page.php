@@ -2,24 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
 /**
- * @method static \Database\Factories\PostFactory factory(...$parameters)
- *
- * @mixin Builder<Post>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<Page>
  */
-class Post extends BaseModel
+class Page extends BaseModel
 {
 	use HasFactory, HasSlug;
+
+	public $timestamps = false;
 
 	protected function casts(): array
 	{
 		return [
-			'published_at' => 'datetime',
+			'is_markdown' => 'boolean',
 		];
 	}
 

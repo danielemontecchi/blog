@@ -9,5 +9,5 @@ parameters:
         - _ide_helper.php
     level: max
     ignoreErrors:
-        - '#Class App\\Models\\Post uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types#'
-
+        - '#uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types#'
+        - '#describes Illuminate\\Database\\Eloquent\\Factories\\Factory but the class extends App\\Models\\BaseModel#'
