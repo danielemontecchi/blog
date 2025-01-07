@@ -1,12 +1,10 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Spatie\Sluggable\HasSlug;
-use Spatie\Sluggable\SlugOptions;
+use Spatie\Sluggable\{HasSlug, SlugOptions};
 
 class BlogCategory extends Model
 {
@@ -22,9 +20,7 @@ class BlogCategory extends Model
 			->saveSlugsTo('slug');
 	}
 
-
 	//*** Relationship ***/
-
 
 	/**
 	 * @return BelongsToMany<BlogPost, BlogCategory>
@@ -34,5 +30,4 @@ class BlogCategory extends Model
 		/** @var BelongsToMany<BlogPost, BlogCategory> */
 		return $this->belongsToMany(BlogPost::class);
 	}
-
 }

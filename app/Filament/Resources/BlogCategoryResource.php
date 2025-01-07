@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlogCategoryResource\Pages;
@@ -14,10 +13,10 @@ use Filament\Tables\Table;
 class BlogCategoryResource extends Resource
 {
 	protected static ?string $navigationGroup = 'Blog';
-	protected static ?string $model = BlogCategory::class;
-	protected static ?int $navigationSort = 1;
+	protected static ?string $model           = BlogCategory::class;
+	protected static ?int $navigationSort     = 1;
 	protected static ?string $navigationLabel = 'Categories';
-	protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+	protected static ?string $navigationIcon  = 'heroicon-o-rectangle-stack';
 
 	public static function form(Form $form): Form
 	{
@@ -58,9 +57,9 @@ class BlogCategoryResource extends Resource
 	public static function getPages(): array
 	{
 		return [
-			'index' => Pages\ListBlogCategories::route('/'),
+			'index'  => Pages\ListBlogCategories::route('/'),
 			'create' => Pages\CreateBlogCategory::route('/create'),
-			'edit' => Pages\EditBlogCategory::route('/{record}/edit'),
+			'edit'   => Pages\EditBlogCategory::route('/{record}/edit'),
 		];
 	}
 }

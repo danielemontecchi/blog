@@ -1,9 +1,7 @@
 <?php
-
 namespace Database\Seeders;
 
-use App\Models\BlogCategory;
-use App\Models\BlogPost;
+use App\Models\{BlogCategory, BlogPost};
 use DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;

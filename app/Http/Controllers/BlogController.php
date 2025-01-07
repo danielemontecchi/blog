@@ -1,9 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 
-use App\Models\BlogCategory;
-use App\Models\BlogPost;
+use App\Models\{BlogCategory, BlogPost};
 use Illuminate\View\View;
 
 class BlogController extends Controller

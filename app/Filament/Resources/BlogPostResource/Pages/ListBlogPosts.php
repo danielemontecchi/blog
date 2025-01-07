@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Filament\Resources\BlogPostResource\Pages;
 
 use App\Filament\Resources\BlogPostResource;

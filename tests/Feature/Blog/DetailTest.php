@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\BlogCategory;
-use App\Models\BlogPost;
+use App\Models\{BlogCategory, BlogPost};
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 uses(RefreshDatabase::class);

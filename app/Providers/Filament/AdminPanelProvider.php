@@ -1,16 +1,14 @@
 <?php
-
 namespace App\Providers\Filament;
 
-use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Filament\Facades\Filament as FFilament;
 use Filament\Http\Middleware\{Authenticate,
 	AuthenticateSession,
 	DisableBladeIconComponents,
 	DispatchServingFilamentEvent};
-use Filament\Navigation\NavigationGroup;
-use Filament\Navigation\NavigationItem;
+use Filament\Navigation\{NavigationGroup, NavigationItem};
 use Filament\Support\Colors\Color;
+use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;

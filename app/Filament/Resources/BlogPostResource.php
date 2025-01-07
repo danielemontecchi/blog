@@ -1,11 +1,10 @@
 <?php
-
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlogPostResource\Pages;
 use App\Models\BlogPost;
-use Filament\Forms\Components\{DatePicker, Grid, MarkdownEditor, TextInput};
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\{DatePicker, Grid, MarkdownEditor, TextInput};
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -17,10 +16,10 @@ use Storage;
 class BlogPostResource extends Resource
 {
 	protected static ?string $navigationGroup = 'Blog';
-	protected static ?string $model = BlogPost::class;
-	protected static ?int $navigationSort = 2;
+	protected static ?string $model           = BlogPost::class;
+	protected static ?int $navigationSort     = 2;
 	protected static ?string $navigationLabel = 'Posts';
-	protected static ?string $navigationIcon = 'heroicon-o-document-text';
+	protected static ?string $navigationIcon  = 'heroicon-o-document-text';
 
 	public static function form(Form $form): Form
 	{
@@ -35,12 +34,13 @@ class BlogPostResource extends Resource
 							->image()
 							->disk('blog')
 							->getUploadedFileNameForStorageUsing(
-								fn(TemporaryUploadedFile $file, BlogPost $record): string => $record->id . '-' . $record->slug . '.' . $file->getClientOriginalExtension(),
+								fn (TemporaryUploadedFile $file, BlogPost $record): string => $record->id . '-' . $record->slug . '.' . $file->getClientOriginalExtension(),
 							)
 							->afterStateUpdated(function ($state, BlogPost $record) {
 								if ($record->cover && Storage::disk('blog')->exists($record->cover)) {
 									Storage::disk('blog')->delete($record->cover);
 								}
+
 								return $state;
 							})
 							->acceptedFileTypes(['image/jpeg', 'image/png'])
@@ -85,9 +85,9 @@ class BlogPostResource extends Resource
 	public static function getPages(): array
 	{
 		return [
-			'index' => Pages\ListBlogPosts::route('/'),
+			'index'  => Pages\ListBlogPosts::route('/'),
 			'create' => Pages\CreateBlogPost::route('/create'),
-			'edit' => Pages\EditBlogPost::route('/{record}/edit'),
+			'edit'   => Pages\EditBlogPost::route('/{record}/edit'),
 		];
 	}
 }

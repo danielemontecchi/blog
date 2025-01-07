@@ -1,5 +1,4 @@
 <?php
-
 namespace Database\Factories;
 
 use App\Models\BlogPost;
@@ -27,19 +26,18 @@ class BlogPostFactory extends Factory
 	public function definition(): array
 	{
 		return [
-			'title' => $this->faker->sentence,
-			'slug' => $this->faker->slug,
-			'content' => $this->faker->paragraphs(3, true),
-			'cover' => $this->generateImage(),
-			'views' => $this->faker->numberBetween(0, 1000),
+			'title'        => $this->faker->sentence,
+			'slug'         => $this->faker->slug,
+			'content'      => $this->faker->paragraphs(3, true),
+			'cover'        => $this->generateImage(),
+			'views'        => $this->faker->numberBetween(0, 1000),
 			'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
 		];
 	}
 
-
 	private function generateImage(): string
 	{
-		$url = 'https://placehold.co/600x400/jpg?text=' . $this->faker->slug;
+		$url      = 'https://placehold.co/600x400/jpg?text=' . $this->faker->slug;
 		$fileName = 'blog/' . rand(1, 100) . '-' . $this->faker->slug . '.jpg';
 
 		// Download image

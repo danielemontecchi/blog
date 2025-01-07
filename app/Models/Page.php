@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -12,7 +11,7 @@ class Page extends Model
 
 	protected $guarded = [];
 	public $timestamps = false;
-	protected $casts = [
+	protected $casts   = [
 		'is_markdown' => 'boolean',
 	];
 

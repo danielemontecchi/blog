@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Providers;
 
 use Illuminate\Support\Facades\Gate;
@@ -28,9 +27,9 @@ class HorizonServiceProvider extends HorizonApplicationServiceProvider
 	{
 		Gate::define('viewHorizon', function ($user) {
 			return !empty($user);
-//            return in_array($user->email, [
-//                //
-//            ]);
+			//            return in_array($user->email, [
+			//                //
+			//            ]);
 		});
 	}
 }
