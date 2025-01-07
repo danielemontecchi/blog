@@ -13,8 +13,8 @@
                             <time datetime="{{optional($post->published_at)->format('Y-m-d')}}" class="text-gray-500">
                                 {{optional($post->published_at)->format('d M Y')}}
                             </time>
-                            {{--                    <a href="#"--}}
-                            {{--                       class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>--}}
+                            <a href="#"
+                               class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">Marketing</a>
                         </div>
                         <div class="group relative">
                             <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">

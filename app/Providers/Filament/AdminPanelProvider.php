@@ -1,9 +1,16 @@
 <?php
+
 namespace App\Providers\Filament;
 
-use Filament\Http\Middleware\{Authenticate, AuthenticateSession, DisableBladeIconComponents, DispatchServingFilamentEvent};
-use Filament\Support\Colors\Color;
 use Filament\{Pages, Panel, PanelProvider, Widgets};
+use Filament\Facades\Filament as FFilament;
+use Filament\Http\Middleware\{Authenticate,
+	AuthenticateSession,
+	DisableBladeIconComponents,
+	DispatchServingFilamentEvent};
+use Filament\Navigation\NavigationGroup;
+use Filament\Navigation\NavigationItem;
+use Filament\Support\Colors\Color;
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -12,6 +19,31 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 
 class AdminPanelProvider extends PanelProvider
 {
+	public function boot(): void
+	{
+		FFilament::serving(function () {
+			FFilament::registerNavigationGroups([
+				NavigationGroup::make('Tools')
+					->collapsible(),
+			]);
+
+			FFilament::registerNavigationItems([
+				NavigationItem::make('Horizon')
+					->url(route('horizon.index'))
+					->icon('heroicon-o-queue-list')
+					->group('Tools')
+					->sort(1)
+					->openUrlInNewTab(),
+				NavigationItem::make('Logs')
+					->url(route('log-viewer.index'))
+					->icon('heroicon-o-document-text')
+					->group('Tools')
+					->sort(2)
+					->openUrlInNewTab(),
+			]);
+		});
+	}
+
 	public function panel(Panel $panel): Panel
 	{
 		return $panel
@@ -45,6 +77,10 @@ class AdminPanelProvider extends PanelProvider
 			])
 			->authMiddleware([
 				Authenticate::class,
+			])
+			->navigationGroups([
+				'Blog',
+				'Settings',
 			]);
 	}
 }

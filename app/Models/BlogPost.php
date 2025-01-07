@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Sluggable\{HasSlug, SlugOptions};
 
-class Page extends Model
+class BlogPost extends Model
 {
 	use HasFactory, HasSlug;
 
 	protected $guarded = [];
-	public $timestamps = false;
+	public $timestamps = true;
 	protected $casts = [
-		'is_markdown' => 'boolean',
+		'published_at' => 'datetime',
 	];
 
 	public function getSlugOptions(): SlugOptions
@@ -22,4 +23,17 @@ class Page extends Model
 			->generateSlugsFrom('title')
 			->saveSlugsTo('slug');
 	}
+
+
+	//*** Relationship ***/
+
+	/**
+	 * @return BelongsToMany<BlogCategory, BlogPost>
+	 */
+	public function categories(): BelongsToMany
+	{
+		/** @var BelongsToMany<BlogCategory, BlogPost> */
+		return $this->belongsToMany(BlogCategory::class);
+	}
+
 }

@@ -10,4 +10,3 @@ parameters:
     level: max
     ignoreErrors:
         - '#uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types#'
-        - '#describes Illuminate\\Database\\Eloquent\\Factories\\Factory but the class extends App\\Models\\BaseModel#'

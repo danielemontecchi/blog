@@ -1,23 +1,27 @@
 <?php
+
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\BlogCategory;
+use App\Models\BlogPost;
 use Illuminate\View\View;
 
 class BlogController extends Controller
 {
 	public function index(): View
 	{
-		$posts = Post::whereNotNull('published_at')
+		$posts = BlogPost::whereNotNull('published_at')
 			->orderByDesc('published_at')
 			->get();
 
-		return view('blog.index', compact('posts'));
+		$categories = BlogCategory::orderBy('name')->get();
+
+		return view('blog.index', compact('posts', 'categories'));
 	}
 
 	public function show(string $slug): View
 	{
-		$post = Post::where('slug', $slug)
+		$post = BlogPost::where('slug', $slug)
 			->firstOrFail();
 		$post->increment('views');
 

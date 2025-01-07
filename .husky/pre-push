@@ -33,4 +33,4 @@ echo "Running tests..."
 echo "Cleaning up..."
 rm -f "$TEST_DB"
 
-echo "Pre-push hook finished successfully!"
+echo "✅ Pre-push hook finished successfully!"

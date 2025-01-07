@@ -1,14 +1,14 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\{Page, Post};
+use App\Models\{Page, BlogPost};
 use Illuminate\View\View;
 
 class PageController extends Controller
 {
 	public function home(): View
 	{
-		$posts = Post::whereNotNull('published_at')
+		$posts = BlogPost::whereNotNull('published_at')
 			->orderByDesc('published_at')
 			->take(9)
 			->get();
