@@ -1,7 +1,9 @@
 <?php
+
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Support\Facades\File;
 
 abstract class TestCase extends BaseTestCase
 {
@@ -10,14 +12,14 @@ abstract class TestCase extends BaseTestCase
 		parent::setUp();
 
 		// Create database if not exists
-		$databasePath = base_path('database/testing.sqlite');
-		if (!file_exists($databasePath)) {
-			touch($databasePath);
+		$databasePath = database_path('testing.sqlite');
+		if (!File::exists($databasePath)) {
+			File::put($databasePath, '');
 		}
 
 		// migrate and seed the database
 		\Artisan::call('migrate', [
-			'--env'  => 'testing',
+			'--env' => 'testing',
 			'--seed' => true,
 		]);
 	}

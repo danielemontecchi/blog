@@ -20,4 +20,9 @@ return new class extends Migration {
 			$table->unique(['group', 'name']);
 		});
 	}
+
+	public function down(): void
+	{
+		Schema::dropIfExists('settings');
+	}
 };

@@ -1,6 +1,9 @@
 <?php
+
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\GoogleAnalyticsVisitorsWidget;
+use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Filament\Facades\Filament as FFilament;
 use Filament\Http\Middleware\{Authenticate,
 	AuthenticateSession,
@@ -8,7 +11,6 @@ use Filament\Http\Middleware\{Authenticate,
 	DispatchServingFilamentEvent};
 use Filament\Navigation\{NavigationGroup, NavigationItem};
 use Filament\Support\Colors\Color;
-use Filament\{Pages, Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -38,6 +40,12 @@ class AdminPanelProvider extends PanelProvider
 					->group('Tools')
 					->sort(2)
 					->openUrlInNewTab(),
+			]);
+		});
+
+		FFilament::serving(function () {
+			FFilament::registerWidgets([
+				GoogleAnalyticsVisitorsWidget::class,
 			]);
 		});
 	}
