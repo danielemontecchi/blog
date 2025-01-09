@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -13,7 +12,7 @@ class BlogPost extends Model
 
 	protected $guarded = [];
 	public $timestamps = true;
-	protected $casts = [
+	protected $casts   = [
 		'published_at' => 'datetime',
 	];
 
@@ -28,7 +27,6 @@ class BlogPost extends Model
 	{
 		return 'slug';
 	}
-
 
 	//*** Relationship ***/
 

@@ -1,23 +1,19 @@
 <?php
-
 namespace App\Filament\Pages;
 
 use App\Settings\GeneralSetting;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\{Section, TextInput, Textarea, Toggle};
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
 
 class SettingsGeneral extends SettingsPage
 {
-	protected static string $settings = GeneralSetting::class;
+	protected static string $settings         = GeneralSetting::class;
 	protected static ?string $navigationGroup = 'Settings';
 	protected static ?string $navigationLabel = 'General';
-	protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
-	protected static ?string $slug = 'settings/general';
-	protected ?string $heading = 'General settings';
+	protected static ?string $navigationIcon  = 'heroicon-o-globe-alt';
+	protected static ?string $slug            = 'settings/general';
+	protected ?string $heading                = 'General settings';
 
 	public function form(Form $form): Form
 	{
@@ -29,7 +25,7 @@ class SettingsGeneral extends SettingsPage
 					->schema([
 						TextInput::make('site_name'),
 						Textarea::make('site_description')
-							->rows(5)
+							->rows(5),
 					]),
 				Section::make('Mode')
 					->description('Operating modes of site.')
@@ -37,7 +33,7 @@ class SettingsGeneral extends SettingsPage
 					->schema([
 						Toggle::make('is_maintenance_mode')
 							->onColor('danger')
-							->offColor('gray')
+							->offColor('gray'),
 					]),
 			]);
 	}

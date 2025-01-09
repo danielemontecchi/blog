@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Filament\Widgets;
 
 use Filament\Widgets\Widget;
@@ -8,7 +7,7 @@ use Spatie\Analytics\Period;
 
 class GoogleAnalyticsVisitorsWidget extends Widget
 {
-	protected static string $view = 'filament.widgets.google-analytics-visitors-widget';
+	protected static string $view          = 'filament.widgets.google-analytics-visitors-widget';
 	protected int|string|array $columnSpan = 'full';
 
 	/**
@@ -18,6 +17,6 @@ class GoogleAnalyticsVisitorsWidget extends Widget
 	{
 		$analyticsData = Analytics::fetchVisitorsAndPageViews(Period::months(1));
 
-		return view('filament.widgets.google-analytics-visitors-widget', (array)($analyticsData->first() ?? []));
+		return view('filament.widgets.google-analytics-visitors-widget', (array) ($analyticsData->first() ?? []));
 	}
 }

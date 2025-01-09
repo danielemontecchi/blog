@@ -1,5 +1,4 @@
 <?php
-
 namespace Tests;
 
 use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
@@ -19,7 +18,7 @@ abstract class TestCase extends BaseTestCase
 
 		// migrate and seed the database
 		\Artisan::call('migrate', [
-			'--env' => 'testing',
+			'--env'  => 'testing',
 			'--seed' => true,
 		]);
 	}

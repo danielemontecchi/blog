@@ -1,24 +1,20 @@
 <?php
-
 namespace App\Filament\Pages;
 
 use App\Settings\SeoSetting;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\{FileUpload, Section, TagsInput, TextInput, Textarea};
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class SettingsSeo extends SettingsPage
 {
-	protected static string $settings = SeoSetting::class;
+	protected static string $settings         = SeoSetting::class;
 	protected static ?string $navigationGroup = 'Settings';
 	protected static ?string $navigationLabel = 'SEO';
-	protected static ?string $navigationIcon = 'heroicon-o-presentation-chart-line';
-	protected static ?string $slug = 'settings/seo';
-	protected ?string $heading = 'SEO settings';
+	protected static ?string $navigationIcon  = 'heroicon-o-presentation-chart-line';
+	protected static ?string $slug            = 'settings/seo';
+	protected ?string $heading                = 'SEO settings';
 
 	public function form(Form $form): Form
 	{
@@ -30,10 +26,15 @@ class SettingsSeo extends SettingsPage
 					->schema([
 						TextInput::make('meta_name')
 							->maxLength(70)
-							->label('Metatag Title'),
+							->label('Title'),
 						Textarea::make('meta_description')
 							->maxLength(160)
-							->label('Metatag Description'),
+							->label('Description'),
+						TagsInput::make('meta_keywords')
+							->label('Keywords')
+							->splitKeys([','])
+							->placeholder('Add keywords...')
+							->helperText('No more than 10 keyword phrases are suggested.'),
 					]),
 				Section::make('Google Analytics')
 					->description('Site tracking and monitoring codes.')
@@ -52,7 +53,7 @@ class SettingsSeo extends SettingsPage
 							->visibility('private')
 							->acceptedFileTypes(['application/json'])
 							->getUploadedFileNameForStorageUsing(
-								fn(TemporaryUploadedFile $file): string => (string)'google_analytics/service-account-credentials.json',
+								fn (TemporaryUploadedFile $file): string => (string) 'google_analytics/service-account-credentials.json',
 							),
 					]),
 			]);
