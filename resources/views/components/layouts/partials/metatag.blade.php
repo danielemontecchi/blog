@@ -29,4 +29,37 @@
 
         gtag('js', new Date());
         gtag('config', '{{ config('services.google.analytics_tracking_id') }}</script>
+
+
+
+    @if(config('services.google.analytics_tracking_id'))
+        <!-- Google Analytics -->
+        <script async
+                src="https://www.googletagmanager.com/gtag/js?id={{ config('services.google.analytics_tracking_id') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const consentGiven = localStorage.getItem('cookie_consent');
+                const isNavigating = sessionStorage.getItem('navigating') || false;
+
+                if (consentGiven === 'granted' || isNavigating) {
+                    gtag('js', new Date());
+                    gtag('config', '{{ config('services.google.analytics_tracking_id') }}', {
+                        'anonymize_ip': false
+                    });
+                } else {
+                    gtag('js', new Date());
+                    gtag('config', '{{ config('services.google.analytics_tracking_id') }}', {
+                        'anonymize_ip': true
+                    });
+                }
+            });
+        </script>
+    @endif
+
 @endif

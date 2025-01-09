@@ -20,6 +20,7 @@
     </main>
 
     <x-layouts.partials.footer/>
+    <x-layouts.partials.cookie/>
 </div>
 
 <!-- Scripts -->
