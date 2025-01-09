@@ -8,7 +8,8 @@ class BlogController extends Controller
 {
 	public function index(): View
 	{
-		$posts = BlogPost::whereNotNull('published_at')
+		$posts = BlogPost::with('categories')
+			->whereNotNull('published_at')
 			->orderByDesc('published_at')
 			->get();
 

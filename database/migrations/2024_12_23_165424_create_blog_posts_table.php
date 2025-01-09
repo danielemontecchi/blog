@@ -14,6 +14,7 @@ return new class extends Migration {
 			$table->id();
 			$table->string('title');
 			$table->string('slug')->unique();
+			$table->string('intro');
 			$table->text('content');
 			$table->string('cover')->nullable();
 			$table->unsignedInteger('views')->default(0);
