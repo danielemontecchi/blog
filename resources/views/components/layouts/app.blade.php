@@ -1,7 +1,11 @@
-<!DOCTYPE html>
+@php use App\Settings\SeoSetting; @endphp
+        <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('components.layouts.partials.metatag')
+    @if(!SEO::getTitle())
+        <title>{{ app(SeoSetting::class)->meta_name }}</title>
+    @endif
 
     @vite('resources/css/app.css')
 
