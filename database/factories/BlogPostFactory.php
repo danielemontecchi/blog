@@ -28,6 +28,7 @@ class BlogPostFactory extends Factory
 		return [
 			'title'        => $this->faker->sentence,
 			'slug'         => $this->faker->slug,
+			'intro'        => $this->faker->text(190),
 			'content'      => $this->faker->paragraphs(3, true),
 			'cover'        => $this->generateImage(),
 			'views'        => $this->faker->numberBetween(0, 1000),
