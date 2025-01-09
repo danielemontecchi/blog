@@ -15,8 +15,16 @@ class GoogleAnalyticsVisitorsWidget extends Widget
 	 */
 	public function render(): \Illuminate\Contracts\View\View
 	{
-		$analyticsData = Analytics::fetchVisitorsAndPageViews(Period::months(1));
+		$analyticsData = collect([]);
 
-		return view('filament.widgets.google-analytics-visitors-widget', (array) ($analyticsData->first() ?? []));
+		try {
+			$analyticsData = Analytics::fetchVisitorsAndPageViews(Period::months(1));
+		} catch (\Exception $e) {
+			// Do nothing
+		}
+
+		return view('filament.widgets.google-analytics-visitors-widget', [
+			'analyticsData' => $analyticsData->first() ?? [],
+		]);
 	}
 }

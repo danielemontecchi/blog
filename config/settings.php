@@ -1,6 +1,6 @@
 <?php
 
-use App\Settings\{GeneralSetting, SeoSetting};
+use App\Settings\{GeneralSetting, LinkSetting, MarketingSetting, SeoSetting, ServiceSetting};
 
 return [
 
@@ -10,7 +10,10 @@ return [
 	 */
 	'settings' => [
 		GeneralSetting::class,
+		LinkSetting::class,
 		SeoSetting::class,
+		MarketingSetting::class,
+		ServiceSetting::class,
 	],
 
 	/*

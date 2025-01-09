@@ -22401,6 +22401,1271 @@ namespace AnourValar\EloquentSerialize\Facades {
 		}
 	}
 }
+namespace Artesaos\SEOTools\Facades {
+	/**
+	 * SEOTools is a facade for the `SEOTools` implementation access.
+	 *
+	 * @see \Artesaos\SEOTools\Contracts\SEOTools
+	 */
+	class SEOTools
+	{
+		/**
+		 *
+		 *
+		 * @return \Artesaos\SEOTools\Contracts\MetaTags
+		 * @static
+		 */
+		public static function metatags()
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->metatags();
+		}
+
+		/**
+		 *
+		 *
+		 * @return \Artesaos\SEOTools\Contracts\OpenGraph
+		 * @static
+		 */
+		public static function opengraph()
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->opengraph();
+		}
+
+		/**
+		 *
+		 *
+		 * @return \Artesaos\SEOTools\Contracts\TwitterCards
+		 * @static
+		 */
+		public static function twitter()
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->twitter();
+		}
+
+		/**
+		 *
+		 *
+		 * @return \Artesaos\SEOTools\Contracts\JsonLd
+		 * @static
+		 */
+		public static function jsonLd()
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->jsonLd();
+		}
+
+		/**
+		 *
+		 *
+		 * @return \Artesaos\SEOTools\Contracts\JsonLdMulti
+		 * @static
+		 */
+		public static function jsonLdMulti()
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->jsonLdMulti();
+		}
+
+		/**
+		 * Setup title for all seo providers.
+		 *
+		 * @param string $title
+		 * @param bool $appendDefault
+		 * @return static
+		 * @static
+		 */
+		public static function setTitle($title, $appendDefault = true)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->setTitle($title, $appendDefault);
+		}
+
+		/**
+		 * Setup description for all seo providers.
+		 *
+		 * @param string $description
+		 * @return static
+		 * @static
+		 */
+		public static function setDescription($description)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->setDescription($description);
+		}
+
+		/**
+		 * Sets the canonical URL.
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setCanonical($url)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->setCanonical($url);
+		}
+
+		/**
+		 * Add one or more images urls.
+		 *
+		 * @param array|string $urls
+		 * @return static
+		 * @static
+		 */
+		public static function addImages($urls)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->addImages($urls);
+		}
+
+		/**
+		 * Get current title from metatags.
+		 *
+		 * @param bool $session
+		 * @return string
+		 * @static
+		 */
+		public static function getTitle($session = false)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->getTitle($session);
+		}
+
+		/**
+		 * Generate from all seo providers.
+		 *
+		 * @param bool $minify
+		 * @return string
+		 * @static
+		 */
+		public static function generate($minify = false)
+		{
+			/** @var \Artesaos\SEOTools\SEOTools $instance */
+			return $instance->generate($minify);
+		}
+
+		/**
+		 * Register a custom macro.
+		 *
+		 * @param string $name
+		 * @param object|callable $macro
+		 * @param-closure-this static  $macro
+		 * @return void
+		 * @static
+		 */
+		public static function macro($name, $macro)
+		{
+			\Artesaos\SEOTools\SEOTools::macro($name, $macro);
+		}
+
+		/**
+		 * Mix another object into the class.
+		 *
+		 * @param object $mixin
+		 * @param bool $replace
+		 * @return void
+		 * @throws \ReflectionException
+		 * @static
+		 */
+		public static function mixin($mixin, $replace = true)
+		{
+			\Artesaos\SEOTools\SEOTools::mixin($mixin, $replace);
+		}
+
+		/**
+		 * Checks if macro is registered.
+		 *
+		 * @param string $name
+		 * @return bool
+		 * @static
+		 */
+		public static function hasMacro($name)
+		{
+			return \Artesaos\SEOTools\SEOTools::hasMacro($name);
+		}
+
+		/**
+		 * Flush the existing macros.
+		 *
+		 * @return void
+		 * @static
+		 */
+		public static function flushMacros()
+		{
+			\Artesaos\SEOTools\SEOTools::flushMacros();
+		}
+	}
+	/**
+	 * JsonLd is a facade for the `JsonLd` implementation access.
+	 *
+	 * @see \Artesaos\SEOTools\Contracts\JsonLd
+	 */
+	class JsonLd
+	{
+		/**
+		 * Check if all attribute are empty
+		 *
+		 * @return static
+		 * @static
+		 */
+		public static function isEmpty()
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->isEmpty();
+		}
+
+		/**
+		 * Generates linked data script tag.
+		 *
+		 * @param bool $minify
+		 * @return string
+		 * @static
+		 */
+		public static function generate($minify = false)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->generate($minify);
+		}
+
+		/**
+		 *
+		 *
+		 * @return string[]|string[][]
+		 * @static
+		 */
+		public static function convertToArray()
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->convertToArray();
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $key
+		 * @param string|array $value
+		 * @return static
+		 * @static
+		 */
+		public static function addValue($key, $value)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->addValue($key, $value);
+		}
+
+		/**
+		 *
+		 *
+		 * @param array $values
+		 * @return static
+		 * @static
+		 */
+		public static function addValues($values)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->addValues($values);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $type
+		 * @return static
+		 * @static
+		 */
+		public static function setType($type)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setType($type);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $title
+		 * @return static
+		 * @static
+		 */
+		public static function setTitle($title)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setTitle($title);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $site
+		 * @return static
+		 * @static
+		 */
+		public static function setSite($site)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setSite($site);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $description
+		 * @return static
+		 * @static
+		 */
+		public static function setDescription($description)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setDescription($description);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string|null|bool $url
+		 * @return static
+		 * @static
+		 */
+		public static function setUrl($url)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setUrl($url);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string|array $images
+		 * @return static
+		 * @static
+		 */
+		public static function setImages($images)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setImages($images);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string|array $image
+		 * @return static
+		 * @static
+		 */
+		public static function addImage($image)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->addImage($image);
+		}
+
+		/**
+		 * {@inheritdoc}
+		 *
+		 * @static
+		 */
+		public static function setImage($image)
+		{
+			/** @var \Artesaos\SEOTools\JsonLd $instance */
+			return $instance->setImage($image);
+		}
+	}
+	/**
+	 * SEOMeta is a facade for the `MetaTags` implementation access.
+	 *
+	 * @see \Artesaos\SEOTools\Contracts\MetaTags
+	 */
+	class SEOMeta
+	{
+		/**
+		 * Generates meta tags HTML./
+		 *
+		 * @param bool $minify
+		 * @return string
+		 * @static
+		 */
+		public static function generate($minify = false)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->generate($minify);
+		}
+
+		/**
+		 * Set the title.
+		 *
+		 * @param string $title
+		 * @param bool $appendDefault
+		 * @return static
+		 * @static
+		 */
+		public static function setTitle($title, $appendDefault = true)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setTitle($title, $appendDefault);
+		}
+
+		/**
+		 * Sets the default title tag.
+		 *
+		 * @param string $default
+		 * @return static
+		 * @static
+		 */
+		public static function setTitleDefault($default)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setTitleDefault($default);
+		}
+
+		/**
+		 * Set the title separator.
+		 *
+		 * @param string $separator
+		 * @return static
+		 * @static
+		 */
+		public static function setTitleSeparator($separator)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setTitleSeparator($separator);
+		}
+
+		/**
+		 * Set the description.
+		 *
+		 * @param string $description
+		 * @return static
+		 * @static
+		 */
+		public static function setDescription($description)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setDescription($description);
+		}
+
+		/**
+		 * Sets the list of keywords, you can send an array or string separated with commas
+		 * also clears the previously set keywords.
+		 *
+		 * @param string|array $keywords
+		 * @return static
+		 * @static
+		 */
+		public static function setKeywords($keywords)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setKeywords($keywords);
+		}
+
+		/**
+		 * Add a keyword.
+		 *
+		 * @param string|array $keyword
+		 * @return static
+		 * @static
+		 */
+		public static function addKeyword($keyword)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->addKeyword($keyword);
+		}
+
+		/**
+		 * Remove a metatag.
+		 *
+		 * @param string $key
+		 * @return static
+		 * @static
+		 */
+		public static function removeMeta($key)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->removeMeta($key);
+		}
+
+		/**
+		 * Add a custom meta tag.
+		 *
+		 * @param string|array $meta
+		 * @param string|null $value
+		 * @param string $name
+		 * @return static
+		 * @static
+		 */
+		public static function addMeta($meta, $value = null, $name = 'name')
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->addMeta($meta, $value, $name);
+		}
+
+		/**
+		 * Sets the canonical URL.
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setCanonical($url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setCanonical($url);
+		}
+
+		/**
+		 * Sets the AMP html URL.
+		 *
+		 * @param string $url
+		 * @return \Artesaos\SEOTools\Contracts\MetaTags
+		 * @static
+		 */
+		public static function setAmpHtml($url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setAmpHtml($url);
+		}
+
+		/**
+		 * Sets the prev URL.
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setPrev($url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setPrev($url);
+		}
+
+		/**
+		 * Sets the next URL.
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setNext($url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setNext($url);
+		}
+
+		/**
+		 * Add an alternate language.
+		 *
+		 * @param string $lang language code in format ISO 639-1
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function addAlternateLanguage($lang, $url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->addAlternateLanguage($lang, $url);
+		}
+
+		/**
+		 * Add alternate languages.
+		 *
+		 * @param array $languages
+		 * @return static
+		 * @static
+		 */
+		public static function addAlternateLanguages($languages)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->addAlternateLanguages($languages);
+		}
+
+		/**
+		 * Set an alternate language.
+		 *
+		 * @param string $lang language code in format ISO 639-1
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setAlternateLanguage($lang, $url)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setAlternateLanguage($lang, $url);
+		}
+
+		/**
+		 * Set alternate languages.
+		 *
+		 * @param array $languages
+		 * @return static
+		 * @static
+		 */
+		public static function setAlternateLanguages($languages)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setAlternateLanguages($languages);
+		}
+
+		/**
+		 * Sets the meta robots.
+		 *
+		 * @param string $robots
+		 * @return \Artesaos\SEOTools\Contracts\MetaTags
+		 * @static
+		 */
+		public static function setRobots($robots)
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->setRobots($robots);
+		}
+
+		/**
+		 * Get the title formatted for display.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getTitle()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getTitle();
+		}
+
+		/**
+		 * Takes the default title.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getDefaultTitle()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getDefaultTitle();
+		}
+
+		/**
+		 * Get the title that was set.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getTitleSession()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getTitleSession();
+		}
+
+		/**
+		 * Get the title separator that was set.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getTitleSeparator()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getTitleSeparator();
+		}
+
+		/**
+		 * Get the Meta keywords.
+		 *
+		 * @return array
+		 * @static
+		 */
+		public static function getKeywords()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getKeywords();
+		}
+
+		/**
+		 * Get all metatags.
+		 *
+		 * @return array
+		 * @static
+		 */
+		public static function getMetatags()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getMetatags();
+		}
+
+		/**
+		 * Get the Meta description.
+		 *
+		 * @return string|null
+		 * @static
+		 */
+		public static function getDescription()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getDescription();
+		}
+
+		/**
+		 * Get the canonical URL.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getCanonical()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getCanonical();
+		}
+
+		/**
+		 * Get the AMP html URL.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getAmpHtml()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getAmpHtml();
+		}
+
+		/**
+		 * Get the prev URL.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getPrev()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getPrev();
+		}
+
+		/**
+		 * Get the next URL.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getNext()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getNext();
+		}
+
+		/**
+		 * Get alternate languages.
+		 *
+		 * @return array
+		 * @static
+		 */
+		public static function getAlternateLanguages()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getAlternateLanguages();
+		}
+
+		/**
+		 * Get meta robots.
+		 *
+		 * @return string
+		 * @static
+		 */
+		public static function getRobots()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			return $instance->getRobots();
+		}
+
+		/**
+		 * Reset all data.
+		 *
+		 * @return void
+		 * @static
+		 */
+		public static function reset()
+		{
+			/** @var \Artesaos\SEOTools\SEOMeta $instance */
+			$instance->reset();
+		}
+	}
+	/**
+	 * TwitterCard is a facade for the `TwitterCards` implementation access.
+	 *
+	 * @see \Artesaos\SEOTools\Contracts\TwitterCards
+	 */
+	class TwitterCard
+	{
+		/**
+		 *
+		 *
+		 * @param bool $minify
+		 * @return string
+		 * @static
+		 */
+		public static function generate($minify = false)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->generate($minify);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $key
+		 * @param string|array $value
+		 * @return static
+		 * @static
+		 */
+		public static function addValue($key, $value)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->addValue($key, $value);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $title
+		 * @return static
+		 * @static
+		 */
+		public static function setTitle($title)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setTitle($title);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $type
+		 * @return static
+		 * @static
+		 */
+		public static function setType($type)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setType($type);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $site
+		 * @return static
+		 * @static
+		 */
+		public static function setSite($site)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setSite($site);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $description
+		 * @return static
+		 * @static
+		 */
+		public static function setDescription($description)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setDescription($description);
+		}
+
+		/**
+		 *
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setUrl($url)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setUrl($url);
+		}
+
+		/**
+		 *
+		 *
+		 * @deprecated use setImage($image) instead
+		 * @param string|array $image
+		 * @return static
+		 * @static
+		 */
+		public static function addImage($image)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->addImage($image);
+		}
+
+		/**
+		 *
+		 *
+		 * @deprecated use setImage($image) instead
+		 * @param string|array $images
+		 * @return static
+		 * @static
+		 */
+		public static function setImages($images)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setImages($images);
+		}
+
+		/**
+		 *
+		 *
+		 * @param $image
+		 * @return \Artesaos\SEOTools\Contracts\TwitterCards
+		 * @static
+		 */
+		public static function setImage($image)
+		{
+			/** @var \Artesaos\SEOTools\TwitterCards $instance */
+			return $instance->setImage($image);
+		}
+	}
+	/**
+	 * OpenGraph is a facade for the `OpenGraph` implementation access.
+	 *
+	 * @see \Artesaos\SEOTools\Contracts\OpenGraph
+	 */
+	class OpenGraph
+	{
+		/**
+		 * Generates open graph tags.
+		 *
+		 * @param bool $minify
+		 * @return string
+		 * @static
+		 */
+		public static function generate($minify = false)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->generate($minify);
+		}
+
+		/**
+		 * Add or update property.
+		 *
+		 * @param string $key
+		 * @param string|array $value
+		 * @return static
+		 * @static
+		 */
+		public static function addProperty($key, $value)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->addProperty($key, $value);
+		}
+
+		/**
+		 * Set Article properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setArticle($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setArticle($attributes);
+		}
+
+		/**
+		 * Set Profile properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setProfile($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setProfile($attributes);
+		}
+
+		/**
+		 * Set Book properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setBook($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setBook($attributes);
+		}
+
+		/**
+		 * Set Music Song properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setMusicSong($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setMusicSong($attributes);
+		}
+
+		/**
+		 * Set Music Album properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setMusicAlbum($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setMusicAlbum($attributes);
+		}
+
+		/**
+		 * Set Music Playlist properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setMusicPlaylist($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setMusicPlaylist($attributes);
+		}
+
+		/**
+		 * Set Music  RadioStation properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setMusicRadioStation($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setMusicRadioStation($attributes);
+		}
+
+		/**
+		 * Set Video Movie properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setVideoMovie($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setVideoMovie($attributes);
+		}
+
+		/**
+		 * Set Video Episode properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setVideoEpisode($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setVideoEpisode($attributes);
+		}
+
+		/**
+		 * Set Video Episode properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setVideoOther($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setVideoOther($attributes);
+		}
+
+		/**
+		 * Set Video Episode properties.
+		 *
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function setVideoTVShow($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setVideoTVShow($attributes);
+		}
+
+		/**
+		 * Add Video properties.
+		 *
+		 * @param string|null $source
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function addVideo($source = null, $attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->addVideo($source, $attributes);
+		}
+
+		/**
+		 * Add audio properties.
+		 *
+		 * @param string|null $source
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function addAudio($source = null, $attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->addAudio($source, $attributes);
+		}
+
+		/**
+		 * Set place properties.
+		 *
+		 * @param array $attributes opengraph place attributes
+		 * @return \Artesaos\SEOTools\Contracts\OpenGraph
+		 * @static
+		 */
+		public static function setPlace($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setPlace($attributes);
+		}
+
+		/**
+		 * Set product properties.
+		 *
+		 * Reference: https://developers.facebook.com/docs/marketing-api/catalog/reference/#example-feeds
+		 *
+		 * @param array $attributes opengraph product attributes
+		 * @return \Artesaos\SEOTools\Contracts\OpenGraph
+		 * @static
+		 */
+		public static function setProduct($attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setProduct($attributes);
+		}
+
+		/**
+		 * Remove property.
+		 *
+		 * @param string $key
+		 * @return static
+		 * @static
+		 */
+		public static function removeProperty($key)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->removeProperty($key);
+		}
+
+		/**
+		 * Add image to properties.
+		 *
+		 * @param string $url
+		 * @param array $attributes
+		 * @return static
+		 * @static
+		 */
+		public static function addImage($source = null, $attributes = [])
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->addImage($source, $attributes);
+		}
+
+		/**
+		 * Add images to properties.
+		 *
+		 * @param array $urls
+		 * @return static
+		 * @static
+		 */
+		public static function addImages($urls)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->addImages($urls);
+		}
+
+		/**
+		 * Define type property.
+		 *
+		 * @param string|null $type set the opengraph type
+		 * @return static
+		 * @static
+		 */
+		public static function setType($type = null)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setType($type);
+		}
+
+		/**
+		 * Define title property.
+		 *
+		 * @param string $title
+		 * @return static
+		 * @static
+		 */
+		public static function setTitle($title = null)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setTitle($title);
+		}
+
+		/**
+		 * Define description property.
+		 *
+		 * @param string $description
+		 * @return static
+		 * @static
+		 */
+		public static function setDescription($description = null)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setDescription($description);
+		}
+
+		/**
+		 * Define url property.
+		 *
+		 * @param string $url
+		 * @return static
+		 * @static
+		 */
+		public static function setUrl($url)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setUrl($url);
+		}
+
+		/**
+		 * Define site_name property.
+		 *
+		 * @param string $name
+		 * @return static
+		 * @static
+		 */
+		public static function setSiteName($name)
+		{
+			/** @var \Artesaos\SEOTools\OpenGraph $instance */
+			return $instance->setSiteName($name);
+		}
+	}
+}
 namespace Barryvdh\Debugbar\Facades {
 	/**
 	 *
@@ -23784,6 +25049,248 @@ namespace Opcodes\LogViewer\Facades {
 		}
 	}
 }
+namespace Sentry\Laravel {
+	/**
+	 *
+	 *
+	 * @see \Sentry\State\HubInterface
+	 */
+	class Facade
+	{
+		/**
+		 * Gets the client bound to the top of the stack.
+		 *
+		 * @static
+		 */
+		public static function getClient()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->getClient();
+		}
+
+		/**
+		 * Gets the ID of the last captured event.
+		 *
+		 * @static
+		 */
+		public static function getLastEventId()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->getLastEventId();
+		}
+
+		/**
+		 * Creates a new scope to store context information that will be layered on
+		 * top of the current one. It is isolated, i.e. all breadcrumbs and context
+		 * information added to this scope will be removed once the scope ends. Be
+		 * sure to always remove this scope with {@see Hub::popScope} when the
+		 * operation finishes or throws.
+		 *
+		 * @static
+		 */
+		public static function pushScope()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->pushScope();
+		}
+
+		/**
+		 * Removes a previously pushed scope from the stack. This restores the state
+		 * before the scope was pushed. All breadcrumbs and context information added
+		 * since the last call to {@see Hub::pushScope} are discarded.
+		 *
+		 * @static
+		 */
+		public static function popScope()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->popScope();
+		}
+
+		/**
+		 * Creates a new scope with and executes the given operation within. The scope
+		 * is automatically removed once the operation finishes or throws.
+		 *
+		 * @param callable $callback The callback to be executed
+		 * @return mixed|void The callback's return value, upon successful execution
+		 * @psalm-template T
+		 * @psalm-param callable(Scope): T $callback
+		 * @psalm-return T
+		 * @static
+		 */
+		public static function withScope($callback)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->withScope($callback);
+		}
+
+		/**
+		 * Calls the given callback passing to it the current scope so that any
+		 * operation can be run within its context.
+		 *
+		 * @static
+		 */
+		public static function configureScope($callback)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->configureScope($callback);
+		}
+
+		/**
+		 * Binds the given client to the current scope.
+		 *
+		 * @static
+		 */
+		public static function bindClient($client)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->bindClient($client);
+		}
+
+		/**
+		 * Captures a message event and sends it to Sentry.
+		 *
+		 * @static
+		 */
+		public static function captureMessage($message, $level = null, $hint = null)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->captureMessage($message, $level, $hint);
+		}
+
+		/**
+		 * Captures an exception event and sends it to Sentry.
+		 *
+		 * @static
+		 */
+		public static function captureException($exception, $hint = null)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->captureException($exception, $hint);
+		}
+
+		/**
+		 * Captures a new event using the provided data.
+		 *
+		 * @static
+		 */
+		public static function captureEvent($event, $hint = null)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->captureEvent($event, $hint);
+		}
+
+		/**
+		 * Captures an event that logs the last occurred error.
+		 *
+		 * @static
+		 */
+		public static function captureLastError($hint = null)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->captureLastError($hint);
+		}
+
+		/**
+		 * Captures a check-in.
+		 *
+		 * @param int|float|null $duration
+		 * @param int|float|null $duration
+		 * @static
+		 */
+		public static function captureCheckIn($slug, $status, $duration = null, $monitorConfig = null, $checkInId = null)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->captureCheckIn($slug, $status, $duration, $monitorConfig, $checkInId);
+		}
+
+		/**
+		 * Records a new breadcrumb which will be attached to future events. They
+		 * will be added to subsequent events to provide more context on user's
+		 * actions prior to an error or crash.
+		 *
+		 * @static
+		 */
+		public static function addBreadcrumb($breadcrumb)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->addBreadcrumb($breadcrumb);
+		}
+
+		/**
+		 * Gets the integration whose FQCN matches the given one if it's available on the current client.
+		 *
+		 * @param string $className The FQCN of the integration
+		 * @psalm-template T of IntegrationInterface
+		 * @psalm-param class-string<T> $className
+		 * @psalm-return T|null
+		 * @static
+		 */
+		public static function getIntegration($className)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->getIntegration($className);
+		}
+
+		/**
+		 * Starts a new `Transaction` and returns it. This is the entry point to manual
+		 * tracing instrumentation.
+		 *
+		 * A tree structure can be built by adding child spans to the transaction, and
+		 * child spans to other spans. To start a new child span within the transaction
+		 * or any span, call the respective `startChild()` method.
+		 *
+		 * Every child span must be finished before the transaction is finished,
+		 * otherwise the unfinished spans are discarded.
+		 *
+		 * The transaction must be finished with a call to its `finish()` method, at
+		 * which point the transaction with all its finished child spans will be sent to
+		 * Sentry.
+		 *
+		 * @param array<string, mixed> $customSamplingContext Additional context that will be passed to the {@see SamplingContext}
+		 * @param array<string, mixed> $customSamplingContext Additional context that will be passed to the {@see SamplingContext}
+		 * @static
+		 */
+		public static function startTransaction($context, $customSamplingContext = [])
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->startTransaction($context, $customSamplingContext);
+		}
+
+		/**
+		 * Returns the transaction that is on the Hub.
+		 *
+		 * @static
+		 */
+		public static function getTransaction()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->getTransaction();
+		}
+
+		/**
+		 * Sets the span on the Hub.
+		 *
+		 * @static
+		 */
+		public static function setSpan($span)
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->setSpan($span);
+		}
+
+		/**
+		 * Returns the span that is on the Hub.
+		 *
+		 * @static
+		 */
+		public static function getSpan()
+		{
+			/** @var \Sentry\State\Hub $instance */
+			return $instance->getSpan();
+		}
+	}
+}
 namespace Illuminate\Support {
 	/**
 	 *
@@ -24294,6 +25801,31 @@ namespace Illuminate\Database\Eloquent\Relations {
 		public static function getPowerJoinExistenceCompareKey()
 		{
 			return \Illuminate\Database\Eloquent\Relations\Relation::getPowerJoinExistenceCompareKey();
+		}
+	}
+}
+namespace Illuminate\Console\Scheduling {
+	/**
+	 *
+	 *
+	 */
+	class Event
+	{
+		/**
+		 *
+		 *
+		 * @see \Sentry\Laravel\Features\ConsoleSchedulingIntegration::register()
+		 * @param string|null $monitorSlug
+		 * @param int|null $checkInMargin
+		 * @param int|null $maxRuntime
+		 * @param bool $updateMonitorConfig
+		 * @param int|null $failureIssueThreshold
+		 * @param int|null $recoveryThreshold
+		 * @static
+		 */
+		public static function sentryMonitor($monitorSlug = null, $checkInMargin = null, $maxRuntime = null, $updateMonitorConfig = true, $failureIssueThreshold = null, $recoveryThreshold = null)
+		{
+			return \Illuminate\Console\Scheduling\Event::sentryMonitor($monitorSlug, $checkInMargin, $maxRuntime, $updateMonitorConfig, $failureIssueThreshold, $recoveryThreshold);
 		}
 	}
 }
@@ -32224,6 +33756,21 @@ namespace {
 	class EloquentSerialize extends \AnourValar\EloquentSerialize\Facades\EloquentSerializeFacade
 	{
 	}
+	class SEO extends \Artesaos\SEOTools\Facades\SEOTools
+	{
+	}
+	class JsonLd extends \Artesaos\SEOTools\Facades\JsonLd
+	{
+	}
+	class SEOMeta extends \Artesaos\SEOTools\Facades\SEOMeta
+	{
+	}
+	class Twitter extends \Artesaos\SEOTools\Facades\TwitterCard
+	{
+	}
+	class OpenGraph extends \Artesaos\SEOTools\Facades\OpenGraph
+	{
+	}
 	class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar
 	{
 	}
@@ -32234,6 +33781,9 @@ namespace {
 	{
 	}
 	class LogViewer extends \Opcodes\LogViewer\Facades\LogViewer
+	{
+	}
+	class Sentry extends \Sentry\Laravel\Facade
 	{
 	}
 }

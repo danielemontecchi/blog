@@ -1,6 +1,7 @@
 <?php
 namespace App\Providers\Filament;
 
+use App\Filament\Pages\Dashboard;
 use App\Filament\Widgets\GoogleAnalyticsVisitorsWidget;
 use Filament\Facades\Filament as FFilament;
 use Filament\Http\Middleware\{Authenticate,
@@ -9,7 +10,7 @@ use Filament\Http\Middleware\{Authenticate,
 	DispatchServingFilamentEvent};
 use Filament\Navigation\{NavigationGroup, NavigationItem};
 use Filament\Support\Colors\Color;
-use Filament\{Pages, Panel, PanelProvider, Widgets};
+use Filament\{Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -62,7 +63,7 @@ class AdminPanelProvider extends PanelProvider
 			->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
 			->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
 			->pages([
-				Pages\Dashboard::class,
+				Dashboard::class,
 			])
 			->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
 			->widgets([

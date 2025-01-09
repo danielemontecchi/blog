@@ -11,11 +11,7 @@ class SeoSetting extends Settings
 	/**
 	 * @var string[]
 	 */
-	public array $meta_keywords = [];
-
-	public ?string $ga_tracking_id;
-	public ?string $ga_property_id;
-	public ?string $ga_service_account_credentials;
+	public ?array $meta_keywords;
 
 	public static function group(): string
 	{

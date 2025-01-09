@@ -2,10 +2,9 @@
 namespace App\Filament\Pages;
 
 use App\Settings\SeoSetting;
-use Filament\Forms\Components\{FileUpload, Section, TagsInput, TextInput, Textarea};
+use Filament\Forms\Components\{Section, TagsInput, TextInput, Textarea};
 use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
-use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
 
 class SettingsSeo extends SettingsPage
 {
@@ -35,26 +34,6 @@ class SettingsSeo extends SettingsPage
 							->splitKeys([','])
 							->placeholder('Add keywords...')
 							->helperText('No more than 10 keyword phrases are suggested.'),
-					]),
-				Section::make('Google Analytics')
-					->description('Site tracking and monitoring codes.')
-					->aside()
-					->schema([
-						TextInput::make('ga_tracking_id')
-							->label('Tracking ID'),
-						TextInput::make('ga_property_id')
-							->numeric()
-							->label('Property ID'),
-						FileUpload::make('ga_service_account_credentials')
-							->label('Service Account Credentials')
-							->helperText('Upload the service account credentials JSON file.')
-							->disk('local')
-//							->directory('google_analytics')
-							->visibility('private')
-							->acceptedFileTypes(['application/json'])
-							->getUploadedFileNameForStorageUsing(
-								fn (TemporaryUploadedFile $file): string => (string) 'google_analytics/service-account-credentials.json',
-							),
 					]),
 			]);
 	}
