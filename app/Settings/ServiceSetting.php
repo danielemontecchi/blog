@@ -5,7 +5,7 @@ use Spatie\LaravelSettings\Settings;
 
 class ServiceSetting extends Settings
 {
-	public ?string $sentry_laravel_dsn = null;
+	public ?string $sentry_laravel_dsn;
 	public ?string $ga_property_id;
 	public ?string $ga_service_account_credentials;
 

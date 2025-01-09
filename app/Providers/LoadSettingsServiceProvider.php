@@ -25,9 +25,11 @@ class LoadSettingsServiceProvider extends ServiceProvider
 
 	public function boot(): void
 	{
-		$this->marketing();
-		$this->seo();
-		$this->service();
+		if (!app()->runningInConsole() && !app()->runningUnitTests()) {
+			$this->marketing();
+			$this->seo();
+			$this->service();
+		}
 	}
 
 	private function marketing(): void
