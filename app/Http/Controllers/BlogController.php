@@ -9,9 +9,9 @@ class BlogController extends Controller
 	public function index(): View
 	{
 		$posts = BlogPost::with('categories')
-			->whereNotNull('published_at')
-			->orderByDesc('published_at')
-			->get();
+			->published()
+			->latest('published_at')
+			->paginate(9);
 
 		$categories = BlogCategory::orderBy('name')->get();
 

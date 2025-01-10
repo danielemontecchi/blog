@@ -1,6 +1,7 @@
 <?php
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -30,6 +31,17 @@ class BlogPost extends Model
 	public function getRouteKeyName(): string
 	{
 		return 'slug';
+	}
+
+	//*** Scopes ***/
+
+	/**
+	 * @param Builder<\App\Models\BlogPost> $query
+	 * @return Builder<\App\Models\BlogPost>
+	 */
+	public function scopePublished(Builder $query): Builder
+	{
+		return $query->whereNotNull('published_at');
 	}
 
 	//*** Mutators ***/

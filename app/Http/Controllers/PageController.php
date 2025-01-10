@@ -8,9 +8,9 @@ class PageController extends Controller
 {
 	public function home(): View
 	{
-		$posts = BlogPost::whereNotNull('published_at')
-			->orderByDesc('published_at')
-			->take(9)
+		$posts = BlogPost::published()
+			->latest('published_at')
+			->take(6)
 			->get();
 
 		return view('pages.home', compact('posts'));

@@ -7,11 +7,12 @@
                 <p class="mt-2 text-lg/8 text-gray-600">Guides, practical examples, and solutions for every web
                     development challenge.</p>
             </div>
-            <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <div class="mx-auto my-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                 @foreach ($posts as $post)
                     <x-blog-post-card :$post/>
                 @endforeach
             </div>
+            {{ $posts->links('vendor.pagination.tailwindui') }}
         </div>
     </div>
 </x-layouts.app>
