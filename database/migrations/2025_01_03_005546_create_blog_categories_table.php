@@ -12,8 +12,13 @@ return new class extends Migration {
 	{
 		Schema::create('blog_categories', function (Blueprint $table) {
 			$table->id();
-			$table->string('name')->unique();
+			$table->string('name');
 			$table->string('slug')->unique();
+			$table->string('icon')->nullable();
+			$table->boolean('home_feature_visible')->default(false);
+			$table->unsignedSmallInteger('home_feature_order')->nullable();
+			$table->string('home_feature_title')->nullable();
+			$table->string('home_feature_description')->nullable();
 		});
 
 		Schema::create('blog_category_blog_post', function (Blueprint $table) {

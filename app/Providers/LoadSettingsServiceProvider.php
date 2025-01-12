@@ -9,6 +9,7 @@ use Artesaos\SEOTools\Facades\TwitterCard;
 use Config;
 use File;
 use Illuminate\Support\ServiceProvider;
+use Schema;
 use Sentry\ClientBuilder;
 use Sentry\SentrySdk;
 use Sentry\State\Hub;
@@ -25,7 +26,7 @@ class LoadSettingsServiceProvider extends ServiceProvider
 
 	public function boot(): void
 	{
-		if (!app()->runningInConsole() && !app()->runningUnitTests()) {
+		if (!app()->runningInConsole() && !app()->runningUnitTests() && Schema::hasTable('settings')) {
 			$this->marketing();
 			$this->seo();
 			$this->service();

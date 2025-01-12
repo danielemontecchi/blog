@@ -3,6 +3,7 @@ namespace App\Providers\Filament;
 
 use App\Filament\Pages\Dashboard;
 use App\Filament\Widgets\GoogleAnalyticsVisitorsWidget;
+use App\Settings\GeneralSetting;
 use Filament\Facades\Filament as FFilament;
 use Filament\Http\Middleware\{Authenticate,
 	AuthenticateSession,
@@ -16,6 +17,8 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Schema;
+use Str;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -52,13 +55,28 @@ class AdminPanelProvider extends PanelProvider
 
 	public function panel(Panel $panel): Panel
 	{
+		$adminPath      = 'admin';
+		$adminColorText = 'green';
+		if (Schema::hasTable('settings')) {
+			try {
+				$generalSettings = app(GeneralSetting::class);
+				$adminPath       = $generalSettings->admin_path
+					?? 'admin';
+				$adminColorText = isset($generalSettings->admin_color)
+					? Str::lower($generalSettings->admin_color)
+					: 'green';
+			} catch (\Throwable $e) {
+				// do nothing
+			}
+		}
+
 		return $panel
-			->default()
 			->id('admin')
-			->path('admin')
+			->path($adminPath)
 			->login()
+			->default()
 			->colors([
-				'primary' => Color::Green,
+				'primary' => Color::all()[$adminColorText],
 			])
 			->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
 			->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

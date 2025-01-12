@@ -12,6 +12,10 @@ return new class extends Migration {
 	{
 		Schema::create('blog_posts', function (Blueprint $table) {
 			$table->id();
+			$table->foreignId('author_id')
+				->nullable()
+				->constrained('users')
+				->nullOnDelete();
 			$table->string('title');
 			$table->string('slug')->unique();
 			$table->string('intro');

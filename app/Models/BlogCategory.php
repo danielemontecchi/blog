@@ -12,6 +12,10 @@ class BlogCategory extends Model
 
 	protected $guarded = [];
 	public $timestamps = false;
+	protected $casts   = [
+		'home_feature_visible' => 'boolean',
+		'home_feature_order'   => 'integer',
+	];
 
 	public function getSlugOptions(): SlugOptions
 	{

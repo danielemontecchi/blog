@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Spatie\Sluggable\{HasSlug, SlugOptions};
 use Storage;
@@ -17,6 +18,7 @@ class BlogPost extends Model
 	protected $appends = ['cover_url'];
 	protected $guarded = [];
 	public $timestamps = true;
+	protected $with    = ['categories', 'author'];
 	protected $casts   = [
 		'published_at' => 'datetime',
 	];
@@ -57,7 +59,7 @@ class BlogPost extends Model
 		return Attribute::make(
 			get: fn (): string => !empty($this->cover) && Storage::disk('blog')->exists($this->cover)
 				? Storage::disk('blog')->url($this->cover)
-				: "https://placehold.co/600x400/FFFFFF/000000/png?text=$initials&font=Open+Sans"
+				: "https://placehold.co/600x400@3x/FFFFFF/000000/png?font=open-sans&text=$initials&font=Open+Sans"
 		);
 	}
 
@@ -70,5 +72,14 @@ class BlogPost extends Model
 	{
 		/** @var BelongsToMany<BlogCategory, BlogPost> */
 		return $this->belongsToMany(BlogCategory::class);
+	}
+
+	/**
+	 * @return BelongsTo<User, BlogPost>
+	 */
+	public function author(): BelongsTo
+	{
+		/** @var BelongsTo<User, BlogPost> */
+		return $this->belongsTo(User::class, 'author_id');
 	}
 }
