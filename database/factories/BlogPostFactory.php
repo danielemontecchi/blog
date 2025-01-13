@@ -47,7 +47,7 @@ class BlogPostFactory extends Factory
 			$id = rand(1, 100);
 		}
 		$ext      = 'png';
-		$url      = 'https://placehold.co/600x400@3x/' . $ext . '?font=open-sans&text=' . $id;
+		$url      = 'https://placehold.co/600x400/d1d5db/4b5563/' . $ext . '?font=open-sans&text=' . $id;
 		$fileName = $id . '-' . $this->faker->slug . '.' . $ext;
 
 		// Download image

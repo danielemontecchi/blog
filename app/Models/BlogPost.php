@@ -59,7 +59,7 @@ class BlogPost extends Model
 		return Attribute::make(
 			get: fn (): string => !empty($this->cover) && Storage::disk('blog')->exists($this->cover)
 				? Storage::disk('blog')->url($this->cover)
-				: "https://placehold.co/600x400@3x/FFFFFF/000000/png?font=open-sans&text=$initials&font=Open+Sans"
+				: "https://placehold.co/600x400/d1d5db/4b5563/png?font=open-sans&text=$initials"
 		);
 	}
 

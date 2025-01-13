@@ -68,7 +68,7 @@ class BlogController extends Controller
 		$breadcrumbs = [
 			[
 				'text' => 'Blog',
-				'link' => route('pages.home'),
+				'link' => route('blog.index'),
 			],
 			[
 				'text' => $post->title,
