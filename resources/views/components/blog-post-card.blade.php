@@ -12,13 +12,13 @@
                 {{optional($post->published_at)->format('d M Y')}}
             </time>
             @foreach($post->categories as $category)
-                <a href="{{ route('blog.category', $category->slug) }}"
+                <a href="{{ route('blog.category', $category) }}"
                    class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">{{$category->name}}</a>
             @endforeach
         </div>
         <div class="group relative">
             <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                <a href="{{ route('blog.show', $post->slug) }}">
+                <a href="{{ route('blog.show', $post) }}">
                     <span class="absolute inset-0"></span>
                     {{ $post->title }}
                 </a>

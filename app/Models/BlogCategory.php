@@ -20,8 +20,13 @@ class BlogCategory extends Model
 	public function getSlugOptions(): SlugOptions
 	{
 		return SlugOptions::create()
-			->generateSlugsFrom('title')
+			->generateSlugsFrom('name')
 			->saveSlugsTo('slug');
+	}
+
+	public function getRouteKeyName(): string
+	{
+		return 'slug';
 	}
 
 	//*** Relationship ***/

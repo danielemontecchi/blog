@@ -25356,6 +25356,19 @@ namespace Illuminate\Support {
 		{
 			return \Illuminate\Support\Str::ucwords($value);
 		}
+
+		/**
+		 *
+		 *
+		 * @see \App\Providers\AppServiceProvider::boot()
+		 * @param mixed|null $text
+		 * @return string
+		 * @static
+		 */
+		public static function initials($text)
+		{
+			return \Illuminate\Support\Str::initials($text);
+		}
 	}
 	/**
 	 *
@@ -28561,12 +28574,39 @@ namespace Livewire\Features\SupportTesting {
 		 *
 		 * @see \Filament\Tables\Testing\TestsFilters::assertTableFilterExists()
 		 * @param string $name
+		 * @param \Closure|null $checkFilterUsing
 		 * @return static
 		 * @static
 		 */
-		public static function assertTableFilterExists($name)
+		public static function assertTableFilterExists($name, $checkFilterUsing = null)
 		{
-			return \Livewire\Features\SupportTesting\Testable::assertTableFilterExists($name);
+			return \Livewire\Features\SupportTesting\Testable::assertTableFilterExists($name, $checkFilterUsing);
+		}
+
+		/**
+		 *
+		 *
+		 * @see \Filament\Tables\Testing\TestsFilters::assertTableFilterVisible()
+		 * @param string $name
+		 * @return static
+		 * @static
+		 */
+		public static function assertTableFilterVisible($name)
+		{
+			return \Livewire\Features\SupportTesting\Testable::assertTableFilterVisible($name);
+		}
+
+		/**
+		 *
+		 *
+		 * @see \Filament\Tables\Testing\TestsFilters::assertTableFilterHidden()
+		 * @param string $name
+		 * @return static
+		 * @static
+		 */
+		public static function assertTableFilterHidden($name)
+		{
+			return \Livewire\Features\SupportTesting\Testable::assertTableFilterHidden($name);
 		}
 
 		/**
@@ -28665,6 +28705,40 @@ namespace Livewire\Features\SupportTesting {
 		public static function assertTableColumnSummarizerExists($columnName, $summarizerId)
 		{
 			return \Livewire\Features\SupportTesting\Testable::assertTableColumnSummarizerExists($columnName, $summarizerId);
+		}
+	}
+}
+namespace Illuminate\Database\Eloquent {
+	/**
+	 *
+	 *
+	 * @template TKey of array-key
+	 * @template TModel of \Illuminate\Database\Eloquent\Model
+	 * @extends \Illuminate\Support\Collection<TKey, TModel>
+	 */
+	class Collection
+	{
+		/**
+		 *
+		 *
+		 * @see \Barryvdh\Debugbar\ServiceProvider::register()
+		 * @static
+		 */
+		public static function debug()
+		{
+			return \Illuminate\Database\Eloquent\Collection::debug();
+		}
+
+		/**
+		 *
+		 *
+		 * @see \Spatie\LaravelRay\RayServiceProvider::registerMacros()
+		 * @param string $description
+		 * @static
+		 */
+		public static function ray($description = '')
+		{
+			return \Illuminate\Database\Eloquent\Collection::ray($description);
 		}
 	}
 }
@@ -28777,40 +28851,6 @@ namespace Illuminate\View {
 		public static function response($callback)
 		{
 			return \Illuminate\View\View::response($callback);
-		}
-	}
-}
-namespace Illuminate\Database\Eloquent {
-	/**
-	 *
-	 *
-	 * @template TKey of array-key
-	 * @template TModel of \Illuminate\Database\Eloquent\Model
-	 * @extends \Illuminate\Support\Collection<TKey, TModel>
-	 */
-	class Collection
-	{
-		/**
-		 *
-		 *
-		 * @see \Barryvdh\Debugbar\ServiceProvider::register()
-		 * @static
-		 */
-		public static function debug()
-		{
-			return \Illuminate\Database\Eloquent\Collection::debug();
-		}
-
-		/**
-		 *
-		 *
-		 * @see \Spatie\LaravelRay\RayServiceProvider::registerMacros()
-		 * @param string $description
-		 * @static
-		 */
-		public static function ray($description = '')
-		{
-			return \Illuminate\Database\Eloquent\Collection::ray($description);
 		}
 	}
 }

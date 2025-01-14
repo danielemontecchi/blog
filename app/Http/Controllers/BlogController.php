@@ -17,7 +17,7 @@ class BlogController extends Controller
 
 		$breadcrumbs = [
 			[
-				'text' => 'Blog',
+				'text' => 'Articles',
 				'link' => '',
 			],
 		];
@@ -67,7 +67,7 @@ class BlogController extends Controller
 
 		$breadcrumbs = [
 			[
-				'text' => 'Blog',
+				'text' => 'Articles',
 				'link' => route('blog.index'),
 			],
 			[

@@ -2,7 +2,8 @@
 <div
         x-data="{ showBanner: localStorage.getItem('cookie_consent') === null }"
         x-show="showBanner"
-        class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6">
+        class="pointer-events-none fixed inset-x-0 bottom-0 px-6 pb-6"
+        x-cloak>
     <div class="pointer-events-auto ml-auto max-w-xl rounded-xl bg-white p-6 shadow-lg ring-1 ring-gray-900/10">
         <p class="text-sm/6 text-gray-900">This website uses cookies to ensure you get the best experience. By
             continuing to browse, you accept the use of
