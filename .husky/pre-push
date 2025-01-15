@@ -3,10 +3,22 @@
 
 echo "Running pre-push hook..."
 
+TEST_DB="database/testing.sqlite"
+
+# creating database if not exists
+if [ ! -f "$TEST_DB" ]; then
+    echo "Creating testing.sqlite..."
+    touch "$TEST_DB"
+    #sqlite3 "$TEST_DB" "VACUUM;"
+fi
+chmod 777 "$TEST_DB"
+
+# execute migrations and seeds
 echo "Running migrations and seeders..."
 php artisan migrate --env=testing --force
 php artisan db:seed --env=testing --force
 
+# run test
 echo "Running tests..."
 ./vendor/bin/pest || {
     echo "Tests failed!"
