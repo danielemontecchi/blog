@@ -4,7 +4,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\BlogPostResource\Pages;
 use App\Models\BlogPost;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\{DatePicker, Grid, MarkdownEditor, TextInput};
+use Filament\Forms\Components\{DatePicker, Grid, MarkdownEditor, Select, TextInput};
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -50,6 +50,13 @@ class BlogPostResource extends Resource
 							->imageResizeTargetWidth('1920')
 							->imageResizeTargetHeight('1080'),
 						DatePicker::make('published_at'),
+						Select::make('tags')
+							->multiple()
+							->relationship('tags', 'name')
+							->preload()
+							->createOptionForm([
+								TextInput::make('name')->required()->unique(),
+							]),
 					]),
 			]);
 	}

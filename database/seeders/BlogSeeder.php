@@ -1,7 +1,7 @@
 <?php
 namespace Database\Seeders;
 
-use App\Models\{BlogCategory, BlogPost};
+use App\Models\{BlogCategory, BlogPost, BlogTag};
 use DB;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Schema;
@@ -18,15 +18,28 @@ class BlogSeeder extends Seeder
 		Schema::disableForeignKeyConstraints();
 		BlogCategory::truncate();
 		BlogPost::truncate();
+		BlogTag::truncate();
 		BlogCategory::factory(rand(5, 10))->create();
-		BlogPost::factory(rand(15, 25))->create();
+		BlogTag::factory(rand(20, 30))->create();
+		BlogPost::factory(rand(20, 30))->create();
 		DB::table('blog_category_blog_post')->truncate();
+		DB::table('blog_post_blog_tag')->truncate();
 		Schema::enableForeignKeyConstraints();
 
 		$categories = BlogCategory::all();
-		BlogPost::all()->each(function (BlogPost $post) use ($categories) {
+		$tags       = BlogTag::all();
+		BlogPost::all()->each(function (BlogPost $post) use ($categories, $tags) {
 			$post->categories()->attach(
-				$categories->random(rand(1, 2))->pluck('id')->toArray()
+				$categories
+					->random(rand(1, 2))
+					->pluck('id')
+					->toArray()
+			);
+			$post->tags()->attach(
+				$tags
+					->random(rand(3, 5))
+					->pluck('id')
+					->toArray()
 			);
 		});
 	}

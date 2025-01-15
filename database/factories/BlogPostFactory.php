@@ -13,15 +13,11 @@ use Storage;
 class BlogPostFactory extends Factory
 {
 	/**
-	 * The name of the factory's corresponding model.
-	 *
 	 * @var class-string<BlogPost>
 	 */
 	protected $model = BlogPost::class;
 
 	/**
-	 * Define the model's default state.
-	 *
 	 * @return array<string, mixed>
 	 */
 	public function definition(): array
@@ -32,7 +28,6 @@ class BlogPostFactory extends Factory
 		return [
 			'author_id'    => $author_id,
 			'title'        => $this->faker->sentence,
-			'slug'         => $this->faker->slug,
 			'intro'        => $this->faker->text(190),
 			'content'      => $this->faker->paragraphs(3, true),
 			'cover'        => $this->generateImage($author_id),

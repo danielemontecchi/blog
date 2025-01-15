@@ -11,15 +11,12 @@ use Str;
 class BlogCategoryFactory extends Factory
 {
 	/**
-	 * Define the model's default state.
-	 *
 	 * @return array<string, mixed>
 	 */
 	public function definition(): array
 	{
 		return [
-			'name'                     => $this->faker->unique()->words(2, true),
-			'slug'                     => $this->faker->unique()->slug,
+			'name'                     => $this->faker->unique()->words(rand(1, 3), true),
 			'icon'                     => $this->faker->randomElement(['academic-cap', 'arrow-down-on-square-stack', 'beaker', 'circle-stack', 'fire', 'identification', 'sparkles']),
 			'home_feature_visible'     => $this->faker->boolean,
 			'home_feature_order'       => $this->faker->numberBetween(1, 10),

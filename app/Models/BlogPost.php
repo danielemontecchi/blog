@@ -66,6 +66,15 @@ class BlogPost extends Model
 	//*** Relationship ***/
 
 	/**
+	 * @return BelongsTo<User, BlogPost>
+	 */
+	public function author(): BelongsTo
+	{
+		/** @var BelongsTo<User, BlogPost> */
+		return $this->belongsTo(User::class, 'author_id');
+	}
+
+	/**
 	 * @return BelongsToMany<BlogCategory, BlogPost>
 	 */
 	public function categories(): BelongsToMany
@@ -75,11 +84,11 @@ class BlogPost extends Model
 	}
 
 	/**
-	 * @return BelongsTo<User, BlogPost>
+	 * @return BelongsToMany<BlogTag, BlogPost>
 	 */
-	public function author(): BelongsTo
+	public function tags(): BelongsToMany
 	{
-		/** @var BelongsTo<User, BlogPost> */
-		return $this->belongsTo(User::class, 'author_id');
+		/** @var BelongsToMany<BlogTag, BlogPost> */
+		return $this->belongsToMany(BlogTag::class, 'blog_post_blog_tag', 'blog_post_id', 'blog_tag_id');
 	}
 }

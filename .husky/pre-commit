@@ -8,6 +8,13 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
+### Run Peck
+./vendor/bin/peck
+if [ $? -ne 0 ]; then
+    echo "❌ Found errors with PHPStan."
+    exit 1
+fi
+
 ### Run PHPStan
 ./vendor/bin/phpstan analyse
 if [ $? -ne 0 ]; then
@@ -16,7 +23,6 @@ if [ $? -ne 0 ]; then
 fi
 
 ### Run PHP CS Fixer
-
 # Identify only staged PHP files (already added to the commit)
 # Filters:
 # - A = Added, C = Copied, M = Modified (excludes deleted and untracked files)

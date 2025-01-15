@@ -1,0 +1,14 @@
+{
+  "preset": "laravel",
+  "ignore": {
+    "words": [
+      "php",
+      "seo",
+      "linkedin",
+      "dsn",
+      "config",
+      "namespace"
+    ],
+    "paths": []
+  }
+}

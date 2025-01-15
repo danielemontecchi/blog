@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\{BlogCategory, BlogPost};
+use App\Repositories\BlogPostRepository;
 use Cache;
 use Illuminate\View\View;
 
@@ -65,6 +66,8 @@ class BlogController extends Controller
 			->firstOrFail();
 		$post->increment('views');
 
+		$relatedPosts = app(BlogPostRepository::class)->relatedPosts($post);
+
 		$breadcrumbs = [
 			[
 				'text' => 'Articles',
@@ -76,6 +79,6 @@ class BlogController extends Controller
 			],
 		];
 
-		return view('blog.show', compact('post', 'breadcrumbs'));
+		return view('blog.show', compact('post', 'relatedPosts', 'breadcrumbs'));
 	}
 }
