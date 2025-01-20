@@ -15,10 +15,10 @@ return new class extends Migration {
 			$table->string('name');
 			$table->string('slug')->unique();
 			$table->string('icon')->nullable();
-			$table->boolean('home_feature_visible')->default(false);
-			$table->unsignedSmallInteger('home_feature_order')->nullable();
-			$table->string('home_feature_title')->nullable();
-			$table->string('home_feature_description')->nullable();
+			$table->string('title')->nullable();
+			$table->string('description')->nullable();
+			$table->boolean('is_featured')->default(false);
+			$table->unsignedSmallInteger('order')->default(99);
 		});
 
 		Schema::create('blog_category_blog_post', function (Blueprint $table) {

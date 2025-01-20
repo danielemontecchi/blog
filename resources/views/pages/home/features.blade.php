@@ -14,10 +14,10 @@
                                 :component="'heroicon-o-' . $feature->icon"
                                 class="size-5 flex-none text-indigo-600"
                         />
-                        {{ $feature->home_feature_title }}
+                        {{ $feature->title }}
                     </dt>
                     <dd class="mt-4 flex flex-auto flex-col text-base/7 text-gray-600">
-                        <p class="flex-auto">{{ $feature->home_feature_description }}</p>
+                        <p class="flex-auto">{{ $feature->description }}</p>
                         <p class="mt-6">
                             <a href="{{ route('blog.category', ['slug' => $feature->slug])  }}"
                                class="text-sm/6 font-semibold text-indigo-600">Learn more <span

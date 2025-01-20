@@ -13,8 +13,8 @@ class PageController extends Controller
 			->take(6)
 			->get();
 
-		$features = BlogCategory::where('home_feature_visible', true)
-			->orderBy('home_feature_order')
+		$features = BlogCategory::where('is_featured', true)
+			->orderBy('order')
 			->get();
 
 		return view('pages.home', compact('posts', 'features'));

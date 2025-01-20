@@ -50,7 +50,6 @@ return [
 			'root'       => storage_path('app/public/blog'),
 			'url'        => env('APP_URL') . '/storage/blog',
 			'visibility' => 'public',
-			'throw'      => false,
 		],
 
 		's3' => [

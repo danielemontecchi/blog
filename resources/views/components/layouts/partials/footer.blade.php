@@ -15,7 +15,7 @@
                         @endphp
                         @if(!empty($linkSetting->github))
                             <a href="https://github.com/{{ $linkSetting->github }}"
-                               alt="&alt;{{ $linkSetting->github }}" target="_blank"
+                               alt="{{ $linkSetting->github }}" target="_blank"
                                class="text-gray-600 hover:text-gray-800">
                                 <span class="sr-only">GitHub</span>
                                 <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -26,7 +26,7 @@
                             </a>
                         @endif
                         @if(!empty($linkSetting->x))
-                            <a href="https://x.com/{{ $linkSetting->x }}" alt="&alt;{{ $linkSetting->x }}"
+                            <a href="https://x.com/{{ $linkSetting->x }}" alt="{{ $linkSetting->x }}"
                                target="_blank" class="text-gray-600 hover:text-gray-800">
                                 <span class="sr-only">X</span>
                                 <svg class="size-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -36,7 +36,7 @@
                         @endif
                         @if(!empty($linkSetting->linkedin))
                             <a href="https://www.linkedin.com/in/{{ $linkSetting->linkedin }}"
-                               alt="&alt;{{ $linkSetting->linkedin }}" target="_blank"
+                               alt="{{ $linkSetting->linkedin }}" target="_blank"
                                class="text-gray-600 hover:text-gray-800">
                                 <span class="sr-only">LinkedIn</span>
                                 <svg class="size-6" fill="currentColor" x="0px" y="0px" width="24" height="24"
@@ -61,16 +61,21 @@
                                    class="text-sm/6 text-gray-600 hover:text-gray-900">Server managed by
                                     <strong>Ploi</strong></a>
                             </li>
+                            <li>
+                                <a href="https://www.freepik.com/" target="_blank"
+                                   class="text-sm/6 text-gray-600 hover:text-gray-900">Images by
+                                    <strong>Freepik</strong></a>
+                            </li>
                         </ul>
                     </div>
                     <div class="mt-10 md:mt-0">
                         <h3 class="text-sm/6 font-semibold text-gray-900">My services</h3>
-                        <ul role="list" class="mt-6 space-y-4">
-                            <li>
-                                <a href="#" target="_blank" class="text-sm/6 text-gray-600 hover:text-gray-900">Database
-                                    Comuni Italiani</a>
-                            </li>
-                        </ul>
+                        {{--                        <ul role="list" class="mt-6 space-y-4">--}}
+                        {{--                            <li>--}}
+                        {{--                                <a href="#" target="_blank" class="text-sm/6 text-gray-600 hover:text-gray-900">Database--}}
+                        {{--                                    Comuni Italiani</a>--}}
+                        {{--                            </li>--}}
+                        {{--                        </ul>--}}
                     </div>
                     <div>
                         <h3 class="text-sm/6 font-semibold text-gray-900">Legal information</h3>
@@ -88,27 +93,27 @@
                 </div>
             </div>
         </div>
-        <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 px-6 lg:px-8">
-            <div class="mx-auto max-w-7xl lg:flex lg:items-center lg:justify-between">
-                <div>
-                    <h3 class="text-sm/6 font-semibold text-gray-900">Subscribe to our newsletter</h3>
-                    <p class="mt-2 text-sm/6 text-gray-600">The latest news, articles, and resources, sent to your inbox
-                        weekly.</p>
-                </div>
-                <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">
-                    <label for="email-address" class="sr-only">Email address</label>
-                    <input type="email" name="email-address" id="email-address" autocomplete="email" required
-                           class="w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:w-56 sm:text-sm/6"
-                           placeholder="Enter your email">
-                    <div class="mt-4 sm:ml-4 sm:mt-0 sm:shrink-0">
-                        <button type="submit"
-                                class="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-                            Subscribe
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+        {{--        <div class="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24 px-6 lg:px-8">--}}
+        {{--            <div class="mx-auto max-w-7xl lg:flex lg:items-center lg:justify-between">--}}
+        {{--                <div>--}}
+        {{--                    <h3 class="text-sm/6 font-semibold text-gray-900">Subscribe to our newsletter</h3>--}}
+        {{--                    <p class="mt-2 text-sm/6 text-gray-600">The latest news, articles, and resources, sent to your inbox--}}
+        {{--                        weekly.</p>--}}
+        {{--                </div>--}}
+        {{--                <form class="mt-6 sm:flex sm:max-w-md lg:mt-0">--}}
+        {{--                    <label for="email-address" class="sr-only">Email address</label>--}}
+        {{--                    <input type="email" name="email-address" id="email-address" autocomplete="email" required--}}
+        {{--                           class="w-full min-w-0 rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:w-56 sm:text-sm/6"--}}
+        {{--                           placeholder="Enter your email">--}}
+        {{--                    <div class="mt-4 sm:ml-4 sm:mt-0 sm:shrink-0">--}}
+        {{--                        <button type="submit"--}}
+        {{--                                class="flex w-full items-center justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">--}}
+        {{--                            Subscribe--}}
+        {{--                        </button>--}}
+        {{--                    </div>--}}
+        {{--                </form>--}}
+        {{--            </div>--}}
+        {{--        </div>--}}
         <div class="mt-8 border-t border-gray-900/10 pt-8 md:flex md:items-center md:justify-between  px-6 lg:px-8">
             <p class="mt-8 text-sm/6 text-gray-600 md:order-1 md:mt-0">
                 &copy; {{date('Y')}} <span class="font-semibold">{{config('site.credits.company')}}</span>. All rights

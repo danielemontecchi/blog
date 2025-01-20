@@ -21,11 +21,13 @@
                 @endforeach
             </div>
 
-            <div class="mt-10 max-w-2xl">{!! str($post->content)->markdown()->sanitizeHtml() !!}</div>
+            <div class="mt-10 max-w-2xl text-base/7 text-gray-600">
+                {!! str($post->content)->markdown()->sanitizeHtml() !!}
+            </div>
 
             @if(!empty($relatedPosts))
-                <h2 class="text-xl font-bold mb-4 mt-16">Related posts</h2>
-                <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+                <h2 class="text-xl font-bold mb-4 mt-20">Related posts</h2>
+                <div class="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
                     @foreach ($relatedPosts as $relatedPost)
                         <x-blog-post-card :post="$relatedPost"/>
                     @endforeach
