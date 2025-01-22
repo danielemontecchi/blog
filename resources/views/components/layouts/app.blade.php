@@ -1,5 +1,5 @@
 @php use App\Settings\SeoSetting; @endphp
-        <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('components.layouts.partials.metatag')
@@ -7,7 +7,9 @@
         <title>{{ app(SeoSetting::class)->meta_name }}</title>
     @endif
 
-    @vite('resources/css/app.css')
+    @if (file_exists(public_path('build/manifest.json')))
+        @vite('resources/css/app.css')
+    @endif
 
     @livewireStyles
     @bukStyles
@@ -28,7 +30,9 @@
 </div>
 
 <!-- Scripts -->
-@vite('resources/js/app.js')
+@if (file_exists(public_path('build/manifest.json')))
+    @vite('resources/js/app.js')
+@endif
 @livewireScripts
 @bukScripts
 @stack('scripts')
