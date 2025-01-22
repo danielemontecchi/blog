@@ -3,34 +3,26 @@
 
 echo "Running pre-push hook..."
 
-# Percorso al file di test temporaneo
 TEST_DB="database/testing.sqlite"
 
-# Crea il file di database se non esiste
+# creating database if not exists
 if [ ! -f "$TEST_DB" ]; then
     echo "Creating testing.sqlite..."
     touch "$TEST_DB"
+    #sqlite3 "$TEST_DB" "VACUUM;"
 fi
-
-# Assicurati che il database abbia i permessi corretti
 chmod 777 "$TEST_DB"
 
-# Esegui le migrazioni e i seeder
+# execute migrations and seeds
 echo "Running migrations and seeders..."
 php artisan migrate --env=testing --force
 php artisan db:seed --env=testing --force
 
-# Esegui i test
+# run test
 echo "Running tests..."
 ./vendor/bin/pest || {
     echo "Tests failed!"
-    # Rimuovi il file temporaneo in caso di errore
-    rm -f "$TEST_DB"
     exit 1
 }
 
-# Elimina il file temporaneo
-echo "Cleaning up..."
-rm -f "$TEST_DB"
-
-echo "Pre-push hook finished successfully!"
+echo "✅ Pre-push hook finished successfully!"

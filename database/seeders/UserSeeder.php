@@ -6,21 +6,17 @@ use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
 {
-	/**
-	 * Run the database seeds.
-	 */
 	public function run(): void
 	{
 		User::truncate();
 
-		// Creare un utente specifico
+		// create default user
 		User::factory()->create([
 			'name'     => 'Admin User',
-			'email'    => 'daniele@montecchi.me',
+			'email'    => 'admin@user.me',
 			'password' => bcrypt('admin1234'),
 		]);
 
-		// Creare 3 utenti casuali
-		User::factory()->count(3)->create();
+		User::factory()->count(5)->create();
 	}
 }

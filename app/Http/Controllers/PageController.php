@@ -1,17 +1,32 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\{BlogCategory, BlogPost, Page};
 use Illuminate\View\View;
 
 class PageController extends Controller
 {
 	public function home(): View
 	{
-		return view('pages.home');
+		$posts = BlogPost::published()
+			->latest('published_at')
+			->take(6)
+			->get();
+
+		$features = BlogCategory::where('is_featured', true)
+			->orderBy('order')
+			->get();
+
+		return view('pages.home', compact('posts', 'features'));
 	}
 
-	public function about(): View
+	public function page(string $slug): View
 	{
-		return view('pages.about');
+		$page = Page::where('slug', $slug)->first();
+		if ($page) {
+			return view('pages.page', compact('page'));
+		}
+
+		abort(404);
 	}
 }

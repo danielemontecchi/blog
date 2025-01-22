@@ -1,25 +1,84 @@
 <?php
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\{BlogCategory, BlogPost};
+use App\Repositories\BlogPostRepository;
+use Cache;
 use Illuminate\View\View;
 
 class BlogController extends Controller
 {
 	public function index(): View
 	{
-		$posts = Post::whereNotNull('published_at')
-			->orderByDesc('published_at')
-			->get();
+		$posts = BlogPost::published()
+			->latest('published_at')
+			->paginate(9);
 
-		return view('blog.index', compact('posts'));
+		$this->loadCategories();
+
+		$breadcrumbs = [
+			[
+				'text' => 'Articles',
+				'link' => '',
+			],
+		];
+
+		return view('blog.index', compact('posts', 'breadcrumbs'));
+	}
+
+	public function category(string $slug): View
+	{
+		$category = BlogCategory::where('slug', $slug)->firstOrFail();
+		$posts    = $category->posts()->published()->paginate(9);
+
+		$this->loadCategories();
+
+		$breadcrumbs = [
+			[
+				'text' => 'Category',
+				'link' => '',
+			],
+			[
+				'text' => $category->name,
+				'link' => '',
+			],
+		];
+
+		return view('blog.index', compact('posts', 'category', 'breadcrumbs'));
+	}
+
+	private function loadCategories(): void
+	{
+		$categories = Cache::remember(
+			'blog_categories',
+			now()->addDay(),
+			fn () => BlogCategory::withCount('posts')
+				->orderBy('name')
+				->get()
+		);
+
+		view()->share(compact('categories'));
 	}
 
 	public function show(string $slug): View
 	{
-		$post = Post::where('slug', $slug)
+		$post = BlogPost::where('slug', $slug)
 			->firstOrFail();
+		$post->increment('views');
 
-		return view('blog.show', compact('post'));
+		$relatedPosts = app(BlogPostRepository::class)->relatedPosts($post);
+
+		$breadcrumbs = [
+			[
+				'text' => 'Articles',
+				'link' => route('blog.index'),
+			],
+			[
+				'text' => $post->title,
+				'link' => '',
+			],
+		];
+
+		return view('blog.show', compact('post', 'relatedPosts', 'breadcrumbs'));
 	}
 }

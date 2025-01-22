@@ -12,7 +12,7 @@ on:
 
 jobs:
   code_analysis:
-    name: Code analysis with PHPStan
+    name: Code analysis
     runs-on: ubuntu-24.04
 
     steps:
@@ -27,6 +27,9 @@ jobs:
 
       - name: Install Dependencies
         run: composer install --no-progress --no-suggest --prefer-dist
+
+      - name: Check ENV vars
+        run: ./scripts/check-env-vars.sh
 
       - name: Run PHPStan
         run: ./vendor/bin/phpstan analyse

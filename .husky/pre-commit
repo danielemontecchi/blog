@@ -1,4 +1,35 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npx lint-staged
+### Check .env variables
+scripts/check-env-vars.sh
+if [ $? -ne 0 ]; then
+    echo "❌ Commit aborted due to discrepancies between .env and .env.example."
+    exit 1
+fi
+
+### Run Peck
+./vendor/bin/peck
+if [ $? -ne 0 ]; then
+    echo "❌ Found errors with PHPStan."
+    exit 1
+fi
+
+### Run PHPStan
+./vendor/bin/phpstan analyse
+if [ $? -ne 0 ]; then
+    echo "❌ Found errors with PHPStan."
+    exit 1
+fi
+
+### Run PHP CS Fixer
+# Identify only staged PHP files (already added to the commit)
+# Filters:
+# - A = Added, C = Copied, M = Modified (excludes deleted and untracked files)
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM -- '*.php')
+# Run PHP CS Fixer only on the staged files, using the project configuration
+echo "$STAGED_FILES" | xargs php-cs-fixer fix --config=php-cs-fixer.dist.php --quiet
+# Re-stage only the files that were modified by PHP CS Fixer (no new files added)
+echo "$STAGED_FILES" | xargs git add
+
+echo "✅ All checks passed. Proceeding with commit."

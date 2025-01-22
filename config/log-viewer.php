@@ -73,6 +73,7 @@ return [
 
 	'middleware' => [
 		'web',
+		\App\Http\Middleware\FilamentAdminMiddleware::class,
 		\Opcodes\LogViewer\Http\Middleware\AuthorizeLogViewer::class,
 	],
 
