@@ -16,6 +16,7 @@ return new class extends Migration {
 				->nullable()
 				->constrained('users')
 				->nullOnDelete();
+			$table->string('sync_reference_id')->nullable();
 			$table->string('title');
 			$table->string('slug')->unique();
 			$table->string('intro');

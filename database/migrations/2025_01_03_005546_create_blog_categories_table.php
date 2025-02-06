@@ -22,7 +22,6 @@ return new class extends Migration {
 		});
 
 		Schema::create('blog_category_blog_post', function (Blueprint $table) {
-			$table->id();
 			$table->foreignId('blog_category_id')->constrained()->cascadeOnDelete();
 			$table->foreignId('blog_post_id')->constrained()->cascadeOnDelete();
 		});
