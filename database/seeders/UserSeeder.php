@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\User;
@@ -12,11 +13,9 @@ class UserSeeder extends Seeder
 
 		// create default user
 		User::factory()->create([
-			'name'     => 'Admin User',
-			'email'    => 'admin@user.me',
+			'name' => 'Admin User',
+			'email' => 'admin@user.me',
 			'password' => bcrypt('admin1234'),
 		]);
-
-		User::factory()->count(5)->create();
 	}
 }

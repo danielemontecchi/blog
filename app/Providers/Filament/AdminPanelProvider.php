@@ -1,9 +1,11 @@
 <?php
+
 namespace App\Providers\Filament;
 
 use App\Filament\Pages\Dashboard;
 use App\Filament\Widgets\GoogleAnalyticsVisitorsWidget;
 use App\Settings\GeneralSetting;
+use Filament\{Panel, PanelProvider, Widgets};
 use Filament\Facades\Filament as FFilament;
 use Filament\Http\Middleware\{Authenticate,
 	AuthenticateSession,
@@ -11,7 +13,6 @@ use Filament\Http\Middleware\{Authenticate,
 	DispatchServingFilamentEvent};
 use Filament\Navigation\{NavigationGroup, NavigationItem};
 use Filament\Support\Colors\Color;
-use Filament\{Panel, PanelProvider, Widgets};
 use Illuminate\Cookie\Middleware\{AddQueuedCookiesToResponse, EncryptCookies};
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
@@ -31,12 +32,6 @@ class AdminPanelProvider extends PanelProvider
 			]);
 
 			FFilament::registerNavigationItems([
-				NavigationItem::make('Horizon')
-					->url(route('horizon.index'))
-					->icon('heroicon-o-queue-list')
-					->group('Tools')
-					->sort(1)
-					->openUrlInNewTab(),
 				NavigationItem::make('Logs')
 					->url(route('log-viewer.index'))
 					->icon('heroicon-o-document-text')
@@ -55,12 +50,12 @@ class AdminPanelProvider extends PanelProvider
 
 	public function panel(Panel $panel): Panel
 	{
-		$adminPath      = 'admin';
+		$adminPath = 'admin';
 		$adminColorText = 'green';
 		if (Schema::hasTable('settings')) {
 			try {
 				$generalSettings = app(GeneralSetting::class);
-				$adminPath       = $generalSettings->admin_path
+				$adminPath = $generalSettings->admin_path
 					?? 'admin';
 				$adminColorText = isset($generalSettings->admin_color)
 					? Str::lower($generalSettings->admin_color)

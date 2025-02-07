@@ -29,7 +29,6 @@
         "filament/spatie-laravel-settings-plugin": "^3.2",
         "intervention/image": "^3.10",
         "laravel/framework": "^11.31",
-        "laravel/horizon": "^5.30",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
         "opcodesio/log-viewer": "^3.12",
