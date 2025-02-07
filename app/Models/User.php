@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -28,7 +29,7 @@ class User extends Authenticatable implements FilamentUser
 	{
 		return [
 			'email_verified_at' => 'datetime',
-			'password'          => 'hashed',
+			'password' => 'hashed',
 		];
 	}
 
@@ -36,7 +37,13 @@ class User extends Authenticatable implements FilamentUser
 
 	public function canAccessPanel(Panel $panel): bool
 	{
-		return str_ends_with($this->email, '@montecchi.me') && $this->hasVerifiedEmail();
+		$fullDomain = request()->getHost();
+		$parts = explode('.', $fullDomain);
+		$baseDomain = $fullDomain;
+		if (count($parts) >= 2) {
+			$baseDomain = implode('.', array_slice($parts, -2));
+		}
+		return str_ends_with($this->email, '@' . $baseDomain) && $this->hasVerifiedEmail();
 	}
 
 	/*** Relationships ***/
