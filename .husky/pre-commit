@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+. "$(dirname "$0")/_/h"
 
 ### Check .env variables
 scripts/check-env-vars.sh
