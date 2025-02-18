@@ -9,9 +9,25 @@
 			</div>
 		@endif
 
-		@if(!empty($posts))
+		@if(!empty($postsLatest))
 			<div class="bg-white py-12 sm:py-20">
-				@include('pages.index.blog')
+				@include('pages.index.blog', [
+					'posts' => $postsLatest,
+					'eyebrow' => 'Recent Articles',
+					'title' => "Code with purpose.\nCreate with passion",
+					'subtitle' => 'Explore the latest articles on coding, creativity, and innovation.',
+				])
+			</div>
+		@endif
+
+		@if(!empty($postsPopular))
+			<div class="bg-white py-12 sm:py-20">
+				@include('pages.index.blog', [
+					'posts' => $postsPopular,
+					'eyebrow' => 'Popular Picks',
+					'title' => "Top Articles\nfor Curious Minds",
+					'subtitle' => 'Explore the articles that developers found most insightful and inspiring.',
+				])
 			</div>
 		@endif
 
