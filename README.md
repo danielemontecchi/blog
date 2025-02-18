@@ -15,6 +15,11 @@ via Filament, and a responsive, modern design.
 - **SEO Optimized**: Meta tags, social sharing configuration, and clean URLs.
 - **Custom Error Pages**: Beautifully designed 404 and 500 error pages.
 - **Google Analytics Integration**: Track and monitor site performance easily.
+- **Image Optimization**: WebP support, lazy loading, and automatic compression for better performance.
+- **GitHub-Integrated Comments**: Users can comment on posts using GitHub authentication.
+- **Database Backup System**: Automatic and manual database backup options.
+- **Advanced RSS Feeds**: Customizable RSS feed options with metadata enhancements.
+- **Static Pages with Laravel Folio**: Manage and render static pages efficiently using Laravel Folio.
 
 ---
 
@@ -31,7 +36,7 @@ Follow these steps to set up the project locally:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/<repo-name>.git
+   git clone https://github.com/danielemontecchi/blog.git
    cd <repo-name>
    ```
 
@@ -43,12 +48,12 @@ Follow these steps to set up the project locally:
    ```
 
 3. **Set Environment Variables**:
-    - Copy `.env.example` to `.env`:
-      ```bash
-      cp .env.example .env
-      ```
-    - Update database credentials and other settings in `.env`. See [REQUIREMENTS.md](REQUIREMENTS.md) for the necessary
-      environment variables.
+	- Copy `.env.example` to `.env`:
+	  ```bash
+	  cp .env.example .env
+	  ```
+	- Update database credentials and other settings in `.env`. See [REQUIREMENTS.md](REQUIREMENTS.md) for the necessary
+	  environment variables.
 
 4. **Run Migrations**:
    ```bash
@@ -76,23 +81,40 @@ Follow these steps to set up the project locally:
 
 - Access the admin panel for managing settings and posts at `/admin`.
 - Default credentials (if seeding is enabled):
-    - **Email**: `admin@user.me`
-    - **Password**: `admin1234`
+	- **Email**: `admin@user.me`
+	- **Password**: `admin1234`
 
 ### Multilingual Configuration
 
 - Add new language files under the `resources/lang` directory.
 - Use the language switcher on the site to toggle between languages.
 
+### Managing Static Pages with Laravel Folio
+
+The project uses **Laravel Folio** to handle static pages efficiently.
+
+- Static pages are stored in `resources/views/pages`.
+- Each page can be accessed dynamically via its route.
+- To create a new static page:
+	1. Add a new Blade file in `resources/views/pages/` (e.g., `about.blade.php`).
+	2. Define its route in `routes/web.php`:
+	   ```php
+	   Route::get('/about', fn() => view('pages.about'));
+	   ```
+- These pages support full Blade templating, including components and layouts.
+
 ---
 
 ## Roadmap
 
 - [x] Dynamic blog post creation and management
+- [x] Image optimization with WebP and lazy loading
+- [x] GitHub-integrated comments system
+- [x] Database backup feature
+- [x] Advanced RSS feed customization
+- [x] Static pages management with Laravel Folio
 - [ ] Content scheduling
-- [ ] Google Analytics integration
 - [ ] Newsletter subscription feature
-- [ ] Multilingual support
 
 ---
 

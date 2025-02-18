@@ -254,7 +254,6 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-settings" />
       <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/intervention/gif" />
-      <path value="$PROJECT_DIR$/vendor/laravel/horizon" />
       <path value="$PROJECT_DIR$/vendor/google/common-protos" />
       <path value="$PROJECT_DIR$/vendor/google/longrunning" />
       <path value="$PROJECT_DIR$/vendor/google/gax" />
@@ -277,6 +276,9 @@
       <path value="$PROJECT_DIR$/vendor/peckphp/peck" />
       <path value="$PROJECT_DIR$/vendor/php-di/php-di" />
       <path value="$PROJECT_DIR$/vendor/php-di/invoker" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/larastan" />
+      <path value="$PROJECT_DIR$/vendor/laravel/folio" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />

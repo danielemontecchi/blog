@@ -81,11 +81,11 @@
                         <h3 class="text-sm/6 font-semibold text-gray-900">Legal information</h3>
                         <ul role="list" class="mt-6 space-y-4">
                             <li>
-                                <a href="{{route('pages.page',['slug'=>'terms'])}}"
+                                <a href="{{route('pages.terms')}}"
                                    class="text-sm/6 text-gray-600 hover:text-gray-900">Terms &amp; Conditions</a>
                             </li>
                             <li>
-                                <a href="{{route('pages.page',['slug'=>'privacy'])}}"
+                                <a href="{{route('pages.privacy')}}"
                                    class="text-sm/6 text-gray-600 hover:text-gray-900">Privacy Policy</a>
                             </li>
                         </ul>
