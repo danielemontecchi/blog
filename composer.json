@@ -1,6 +1,6 @@
 {
 	"name": "danielemontecchi/site",
-	"version": "dev-1.0.0",
+	"version": "dev-1.1.0",
 	"type": "project",
 	"description": "A Laravel project for a personal blog and portfolio.",
 	"keywords": [
