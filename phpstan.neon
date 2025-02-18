@@ -7,8 +7,6 @@ parameters:
         - database/
     excludePaths:
         - _ide_helper.php
-    excludes_analyse:
-    	- _ide_helper.php
     level: max
     ignoreErrors:
         - '#uses generic trait Illuminate\\Database\\Eloquent\\Factories\\HasFactory but does not specify its types#'
